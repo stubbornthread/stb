@@ -150,11 +150,11 @@ MOBILE
 }
 /* SALE BADGE */
 .product-card{
-    position:relative;
+    position:relative !important;
 }
 
 .sale-badge{
-    position:absolute;
+    position:absolute !important;
     top:12px;
     left:12px;
     background:#ff0000;
@@ -163,6 +163,5 @@ MOBILE
     font-weight:800;
     padding:6px 10px;
     border-radius:6px;
-    z-index:10;
-    box-shadow:0 4px 10px rgba(0,0,0,0.4);
+    z-index:9999;
 }
