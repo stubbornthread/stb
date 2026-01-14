@@ -1,3 +1,19 @@
+/* FIX hero overlap */
+.hero{
+    margin-bottom:0;
+}
+
+.container{
+    position:relative;
+    z-index:2;
+    background:#000;
+}
+
+.product-card img{
+    position:relative;
+    z-index:3;
+}
+
 /* ===============================
 PRODUCT GRID
 =============================== */
