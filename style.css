@@ -1,21 +1,4 @@
 /* ===============================
-GLOBAL
-=============================== */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Inter, system-ui, sans-serif;
-}
-
-html,body{
-    width:100%;
-    overflow-x:hidden;
-    background:#000;
-    color:#fff;
-}
-
-/* ===============================
 PRODUCT GRID
 =============================== */
 .product-grid{
@@ -35,8 +18,9 @@ PRODUCT CARD
     background:#0b0b0b;
     border-radius:14px;
     overflow:hidden;
-    box-shadow:0 10px 30px rgba(0,0,0,.7);
-    transition:.4s ease;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.6);
+    transition:.35s ease;
     display:flex;
     flex-direction:column;
 }
@@ -48,51 +32,34 @@ PRODUCT CARD
 /* ===============================
 IMAGE
 =============================== */
-.product-img-box{
+.product-card img{
     width:100%;
-    aspect-ratio:3/4;
+    height:380px;
+    object-fit:contain;     /* no zoom, no crop */
     background:#111;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    overflow:hidden;
-}
-
-.product-img-box img{
-    width:100%;
-    height:100%;
-    object-fit:contain;   /* 🔥 NO ZOOM, NO CROP */
     display:block;
 }
 
 /* ===============================
-TEXT
+TITLE
 =============================== */
-.product-info{
-    padding:16px;
-    text-align:center;
-}
-
-.product-info h3{
-    font-size:14px;
+.product-card h3{
+    font-size:15px;
     font-weight:600;
-    margin-bottom:8px;
+    margin:14px 12px 6px;
+    line-height:1.4;
     color:#fff;
-}
-
-.product-price{
-    font-size:18px;
-    font-weight:800;
-    color:#00ffcc;
+    min-height:42px;        /* all titles same height */
 }
 
 /* ===============================
-FOOTER
+PRICE
 =============================== */
-.footer-section{
-    width:100vw;
-    background:#000;
-    padding:70px 5% 30px;
+.product-card p{
+    font-size:18px;
+    font-weight:800;
+    color:#00ffcc;
+    margin-bottom:16px;
 }
 
 /* ===============================
@@ -104,7 +71,7 @@ MOBILE
         gap:16px;
     }
 
-    .product-img-box{
-        aspect-ratio:3/4;
+    .product-card img{
+        height:300px;
     }
 }
