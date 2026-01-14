@@ -93,12 +93,25 @@ body{
     overflow-x:hidden !important;
 }
 
-/* Footer must be full width */
+/* HARD RESET – find & kill horizontal overflow */
+html, body{
+    max-width:100%;
+    overflow-x:hidden !important;
+}
+
+/* Detect element that causes overflow (temporary) */
+/*
+*{
+    outline:1px solid red;
+}
+*/
+
+/* Footer full width fix */
 .footer-section{
-    position:relative;
-    left:0;
-    right:0;
+    background:#000;
     width:100vw;
     margin-left:calc(-50vw + 50%);
     margin-right:calc(-50vw + 50%);
+    padding-left:5vw;
+    padding-right:5vw;
 }
