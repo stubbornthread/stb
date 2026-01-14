@@ -17,3 +17,12 @@
 .image-only-grid img:hover{
     transform:scale(1.05);
 }
+```css
+/* Make all product images auto fit */
+.product-img img,
+.product-img,
+.image-only-grid img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
