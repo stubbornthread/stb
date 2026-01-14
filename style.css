@@ -12,6 +12,34 @@
     font-weight:900;
     font-size:6rem;
     letter-spacing:-2px;
+    color:#fff;
+    text-shadow: 0 0 20px rgba(255,255,255,0.25);
+    animation: heroFade 1.2s ease-out forwards;
+}
+
+/* soft glowing pulse */
+@keyframes heroGlow{
+    0%{ text-shadow:0 0 10px rgba(255,255,255,0.2); }
+    50%{ text-shadow:0 0 25px rgba(255,255,255,0.4); }
+    100%{ text-shadow:0 0 10px rgba(255,255,255,0.2); }
+}
+
+/* entry animation */
+@keyframes heroFade{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.hero h1:hover{
+    animation: heroGlow 2s infinite;
+}
+
 }
 
 .logo{
