@@ -1,35 +1,85 @@
-
-/* ===== 6 Product Auto Image Grid ===== */
-.image-only-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:30px;
-    margin-top:40px;
-.image-only-grid img{
-    width:100%;
-    aspect-ratio: 3 / 4;
-    object-fit: cover;
-    border-radius:12px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.08);
-    transition:.4s;
-}
-
-
-.image-only-grid img:hover{
-    transform:scale(1.05);
-}
-```css
-/* Make all product images auto fit */
-.product-img img,
-.product-img,
-.image-only-grid img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-body, html{
+/* ===== RESET ===== */
+html, body{
     margin:0;
     padding:0;
     width:100%;
     overflow-x:hidden;
+    font-family:Inter, Arial, sans-serif;
+}
+
+/* ===== IMAGE GRID (6 PRODUCTS) ===== */
+.image-only-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:30px;
+    margin-top:40px;
+}
+
+.image-only-grid img{
+    width:100%;
+    aspect-ratio:3 / 4;
+    object-fit:cover;
+    border-radius:14px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    transition:0.4s;
+}
+
+.image-only-grid img:hover{
+    transform:scale(1.05);
+}
+
+/* ===== PRODUCT CARDS ===== */
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+    gap:40px;
+    margin-top:60px;
+}
+
+.product-card{
+    border:1px solid #eee;
+    border-radius:12px;
+    overflow:hidden;
+    transition:0.3s;
+}
+
+.product-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 15px 30px rgba(0,0,0,0.08);
+}
+
+.product-img{
+    width:100%;
+    aspect-ratio:3 / 4;
+    object-fit:cover;
+    display:block;
+}
+
+/* ===== FOOTER ===== */
+.footer-section{
+    background:#000;
+    color:#fff;
+    padding:60px 5%;
+    width:100%;
+}
+
+.footer-container{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+    gap:40px;
+}
+
+.footer-bottom{
+    text-align:center;
+    margin-top:40px;
+    color:#777;
+}
+
+/* ===== MOBILE FIX ===== */
+@media(max-width:768px){
+    .image-only-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
 }
