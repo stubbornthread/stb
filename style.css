@@ -2,9 +2,9 @@
 GLOBAL RESET
 =============================== */
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
+    box-sizing:border-box;
 }
 
 html, body{
@@ -12,6 +12,7 @@ html, body{
     overflow-x:hidden;
     font-family:Inter, Arial, sans-serif;
     background:#000;
+    color:#fff;
 }
 
 /* ===============================
@@ -35,7 +36,7 @@ PRODUCT CARD
     border-radius:16px;
     overflow:hidden;
     box-shadow:0 10px 30px rgba(0,0,0,0.5);
-    transition:.4s;
+    transition:0.4s;
 }
 
 .product-card:hover{
@@ -43,16 +44,16 @@ PRODUCT CARD
 }
 
 /* ===============================
-IMAGE CONTAINER
+IMAGE BOX
 =============================== */
 .product-img-box{
     width:100%;
-    height:300px;      /* CONTROL IMAGE SIZE */
+    height:300px;
     position:relative;
     overflow:hidden;
 }
 
-/* images */
+/* Images */
 .product-img-box img{
     width:100%;
     height:100%;
@@ -94,7 +95,7 @@ TEXT
 
 .product-info h3{
     font-size:15px;
-    color:#fff;
+    margin-bottom:5px;
 }
 
 .product-price{
@@ -108,13 +109,12 @@ FOOTER
 =============================== */
 .footer-section{
     background:#000;
-    color:#fff;
     width:100%;
     padding:60px 5%;
 }
 
 /* ===============================
-MOBILE FIX
+MOBILE
 =============================== */
 @media(max-width:768px){
     .product-grid{
