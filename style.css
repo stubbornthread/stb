@@ -1,23 +1,4 @@
-/* ===============================
-GLOBAL
-=============================== */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html,body{
-    width:100%;
-    overflow-x:hidden;
-    font-family:Inter, Arial, sans-serif;
-    background:#000;
-    color:#fff;
-}
-
-/* ===============================
-PRODUCT GRID
-=============================== */
+/* ===== PRODUCT GRID ===== */
 .product-grid{
     width:100%;
     max-width:1300px;
@@ -28,9 +9,7 @@ PRODUCT GRID
     gap:24px;
 }
 
-/* ===============================
-PRODUCT CARD
-=============================== */
+/* ===== PRODUCT CARD ===== */
 .product-card{
     background:#0b0b0b;
     border-radius:14px;
@@ -43,12 +22,10 @@ PRODUCT CARD
     transform:translateY(-6px);
 }
 
-/* ===============================
-IMAGE BOX
-=============================== */
+/* ===== IMAGE BOX ===== */
 .product-img-box{
     width:100%;
-    aspect-ratio:3 / 4;   /* 🔥 perfect fashion size */
+    aspect-ratio:3 / 4;
     position:relative;
     overflow:hidden;
 }
@@ -77,9 +54,7 @@ IMAGE BOX
     transform:scale(1);
 }
 
-/* ===============================
-TEXT
-=============================== */
+/* ===== PRODUCT TEXT ===== */
 .product-info{
     padding:14px;
     text-align:center;
@@ -97,25 +72,18 @@ TEXT
     color:#00ffcc;
 }
 
-/* ===============================
-FOOTER
-=============================== */
+/* ===== FOOTER FIX ===== */
 .footer-section{
     width:100%;
-    background:#000;
+    margin:0;
     padding:70px 5% 30px;
+    background:#000;
 }
 
-/* ===============================
-MOBILE
-=============================== */
+/* ===== MOBILE ===== */
 @media(max-width:768px){
     .product-grid{
         grid-template-columns:repeat(2,1fr);
         gap:16px;
-    }
-
-    .product-info h3{
-        font-size:13px;
     }
 }
