@@ -226,3 +226,24 @@ MOBILE
   font-size:28px;
   cursor:pointer;
 }
+.upload-float{
+    position:fixed;
+    bottom:100px;
+    right:30px;
+    background:#000;
+    color:#fff;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:26px;
+    cursor:pointer;
+    box-shadow:0 8px 20px rgba(0,0,0,.4);
+    z-index:9999;
+}
+.upload-float:hover{
+    background:#00ffcc;
+    color:#000;
+}
