@@ -9,17 +9,17 @@
 /* FIX hero overlap */
 .hero h1{
     font-family:'Poppins', sans-serif;
-    font-size:6rem;
     font-weight:900;
+    font-size:6rem;
     letter-spacing:-2px;
-    color:white;
-    text-transform:none;
 }
+
 .logo{
     font-family:'Poppins', sans-serif;
     font-weight:900;
     letter-spacing:-1px;
 }
+
 
 #shop{
     position:relative;
