@@ -210,20 +210,11 @@
             <h2>The Essentials</h2>
         </div>
 <div class="image-only-grid" id="imageGrid"></div>
-
+        
 <script>
-const images = [
-  "1.jpg",
-  "2.jpg",
-  "3.jpg",
-  "4.jpg",
-  "5.jpg",
-  "6.jpg"
-];
-
+const images = ["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg"];
 const grid = document.getElementById("imageGrid");
-
-images.forEach(img => {
+images.forEach(img=>{
   grid.innerHTML += `<img src="images/${img}">`;
 });
 </script>
