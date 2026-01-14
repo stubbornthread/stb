@@ -307,50 +307,47 @@
     <div class="cta-text">
         Want to print your own photo on a T-shirt?
     </div>
-    <<a class="custom-btn" onclick="openCustom()">Custom Print</a>
+<div class="upload-cta">
+   <button onclick="openUpload()">Upload Your Design</button>
+</div>
 
-<div class="custom-popup" id="customPopup">
-  <div class="custom-box">
+<div class="upload-modal" id="uploadModal">
+  <div class="upload-box">
+    <span class="close" onclick="closeUpload()">×</span>
 
-  <div class="form-head">
-    ✈️ <h2>Send us your Design</h2>
+    <h2>Send us your Files</h2>
     <p>Upload your photo for custom T-shirt printing</p>
+
+    <form action="https://formsubmit.co/printing@stubbornthread.in" method="POST" enctype="multipart/form-data">
+
+      <label>Full Name</label>
+      <input type="text" name="Name" required>
+
+      <label>Email</label>
+      <input type="email" name="Email" required>
+
+      <label>Phone</label>
+      <input type="tel" name="Phone" required>
+
+      <label>Size</label>
+      <select name="Size" required>
+        <option>S</option><option>M</option><option>L</option><option>XL</option>
+      </select>
+
+      <label>Color</label>
+      <select name="Color" required>
+        <option>Black</option><option>White</option><option>Red</option><option>Blue</option>
+      </select>
+
+      <label>Upload Design</label>
+      <input type="file" name="Design" required>
+
+      <label>Message</label>
+      <textarea name="Message"></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
   </div>
-
-  <form action="https://formsubmit.co/printing@stubbornthread.in" method="POST" enctype="multipart/form-data">
-
-    <label>Full Name</label>
-    <input type="text" name="Name" required>
-
-    <label>Phone Number</label>
-    <input type="tel" name="Phone" required>
-
-    <label>Select Size</label>
-    <select name="Size" required>
-      <option>Please Select</option>
-      <option>S</option><option>M</option><option>L</option><option>XL</option>
-    </select>
-
-    <label>Select Color</label>
-    <select name="Color" required>
-      <option>Please Select</option>
-      <option>Black</option><option>White</option><option>Red</option><option>Blue</option>
-    </select>
-
-    <label>Upload your photo</label>
-    <div class="upload-box">
-      <input type="file" name="Design" id="imgInput" accept="image/*" required>
-      <p>☁️ Upload a photo<br><span>Drag and drop here</span></p>
-    </div>
-
-    <img id="preview">
-
-    <label>Your message</label>
-    <textarea name="Notes" placeholder="Any special instruction?"></textarea>
-
-    <button type="submit">Submit</button>
-
-  </form>
 </div>
 
     <footer class="footer-section">
