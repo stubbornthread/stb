@@ -295,4 +295,85 @@ MOBILE
     background:#00ffcc;
     color:#000;
 }
+.custom-box{
+  background:#fff;
+  color:#000;
+  padding:30px;
+  border-radius:20px;
+  width:90%;
+  max-width:420px;
+  box-shadow:0 25px 50px rgba(0,0,0,.3);
+}
+
+.form-head{
+  text-align:center;
+  margin-bottom:20px;
+}
+
+.form-head h2{
+  font-size:22px;
+  margin-top:10px;
+}
+
+.custom-box label{
+  font-size:13px;
+  font-weight:700;
+  margin-top:12px;
+  display:block;
+}
+
+.custom-box input,
+.custom-box select,
+.custom-box textarea{
+  width:100%;
+  padding:12px;
+  border-radius:8px;
+  border:1px solid #ddd;
+  margin-top:6px;
+  margin-bottom:12px;
+}
+
+.upload-box{
+  border:2px dashed #ccc;
+  padding:25px;
+  text-align:center;
+  border-radius:12px;
+  position:relative;
+  cursor:pointer;
+}
+
+.upload-box input{
+  position:absolute;
+  inset:0;
+  opacity:0;
+}
+
+.upload-box p{
+  font-size:14px;
+  color:#555;
+}
+
+.upload-box span{
+  font-size:12px;
+  color:#aaa;
+}
+
+#preview{
+  width:100%;
+  margin:10px 0;
+  display:none;
+  border-radius:12px;
+}
+
+.custom-box button{
+  width:100%;
+  padding:14px;
+  background:#000;
+  color:#fff;
+  border:none;
+  border-radius:30px;
+  font-weight:800;
+  cursor:pointer;
+}
+
 
