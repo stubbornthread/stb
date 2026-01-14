@@ -165,207 +165,51 @@ MOBILE
     border-radius:6px;
     z-index:9999;
 }
-.custom-order{
-    max-width:500px;
-    margin:80px auto;
-    background:#111;
-    padding:30px;
-    border-radius:12px;
-    color:#fff;
-}
-
-.custom-order h2{
-    text-align:center;
-    margin-bottom:20px;
-}
-
-.custom-order input,
-.custom-order select,
-.custom-order textarea{
-    width:100%;
-    padding:12px;
-    margin-bottom:15px;
-    background:#000;
-    border:1px solid #333;
-    color:#fff;
-    border-radius:6px;
-}
-
-.custom-order button{
-    width:100%;
-    padding:14px;
-    background:#00ffcc;
-    border:none;
-    font-weight:800;
-    cursor:pointer;
-}
-
-.custom-btn{
-    display:block;
-    margin:80px auto;
-    width:fit-content;
-    background:#00ffcc;
-    color:#000;
-    padding:14px 36px;
-    border-radius:40px;
-    font-weight:800;
-    cursor:pointer;
-}
-
-.custom-popup{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.75);
-    display:none;
-    justify-content:center;
-    align-items:center;
-    z-index:9999;
-}
-
-.custom-box{
-    background:#111;
-    padding:30px;
-    border-radius:16px;
-    width:90%;
-    max-width:420px;
-    color:white;
-    position:relative;
-}
-
-.custom-box input,
-.custom-box select{
-    width:100%;
-    padding:12px;
-    margin-bottom:12px;
-    background:#000;
-    border:1px solid #333;
-    color:white;
-    border-radius:6px;
-}
-
-.custom-box button{
-    width:100%;
-    padding:14px;
-    background:#00ffcc;
-    border:none;
-    font-weight:800;
-    cursor:pointer;
-}
-
-.close{
-    position:absolute;
-    top:10px;
-    right:15px;
-    font-size:26px;
-    cursor:pointer;
-}
-
-#preview{
-    width:100%;
-    margin:10px 0;
-    border-radius:10px;
-    display:none;
-}
-.cta-bar{
-    width:100%;
-    background:#fff;
-    padding:20px 5%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.cta-text{
-    font-size:18px;
-    font-weight:700;
-    color:#000;
-}
-
-.cta-btn{
-    background:#000;
-    color:#fff;
-    padding:12px 30px;
-    border-radius:30px;
-    font-weight:800;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.cta-btn:hover{
-    background:#00ffcc;
-    color:#000;
-}
-.custom-box{
+.upload-cta{
   background:#fff;
-  color:#000;
   padding:30px;
-  border-radius:20px;
-  width:90%;
-  max-width:420px;
-  box-shadow:0 25px 50px rgba(0,0,0,.3);
-}
-
-.form-head{
   text-align:center;
-  margin-bottom:20px;
 }
 
-.form-head h2{
-  font-size:22px;
-  margin-top:10px;
-}
-
-.custom-box label{
-  font-size:13px;
-  font-weight:700;
-  margin-top:12px;
-  display:block;
-}
-
-.custom-box input,
-.custom-box select,
-.custom-box textarea{
-  width:100%;
-  padding:12px;
-  border-radius:8px;
-  border:1px solid #ddd;
-  margin-top:6px;
-  margin-bottom:12px;
-}
-
-.upload-box{
-  border:2px dashed #ccc;
-  padding:25px;
-  text-align:center;
-  border-radius:12px;
-  position:relative;
+.upload-cta button{
+  background:#000;
+  color:#fff;
+  padding:14px 40px;
+  border-radius:40px;
+  font-weight:800;
+  border:none;
   cursor:pointer;
 }
 
-.upload-box input{
-  position:absolute;
+.upload-modal{
+  position:fixed;
   inset:0;
-  opacity:0;
-}
-
-.upload-box p{
-  font-size:14px;
-  color:#555;
-}
-
-.upload-box span{
-  font-size:12px;
-  color:#aaa;
-}
-
-#preview{
-  width:100%;
-  margin:10px 0;
+  background:rgba(0,0,0,.75);
   display:none;
-  border-radius:12px;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
 }
 
-.custom-box button{
+.upload-box{
+  background:#fff;
+  padding:30px;
+  border-radius:22px;
+  width:90%;
+  max-width:420px;
+}
+
+.upload-box input,
+.upload-box select,
+.upload-box textarea{
+  width:100%;
+  padding:12px;
+  border-radius:10px;
+  border:1px solid #ddd;
+  margin-bottom:12px;
+}
+
+.upload-box button{
   width:100%;
   padding:14px;
   background:#000;
@@ -373,7 +217,12 @@ MOBILE
   border:none;
   border-radius:30px;
   font-weight:800;
-  cursor:pointer;
 }
 
-
+.close{
+  position:absolute;
+  right:20px;
+  top:15px;
+  font-size:28px;
+  cursor:pointer;
+}
