@@ -201,6 +201,39 @@
     </div>
 
     <div class="product-grid">
+        <div class="custom-order">
+    <h2>Custom Print Your T-Shirt</h2>
+
+    <form action="https://formsubmit.co/printing@stubbornthread.in" method="POST" enctype="multipart/form-data">
+
+        <input type="text" name="Name" placeholder="Your Full Name" required>
+        <input type="tel" name="Phone" placeholder="Phone Number" required>
+
+        <select name="Size" required>
+            <option value="">Select Size</option>
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+            <option>XL</option>
+        </select>
+
+        <select name="Color" required>
+            <option value="">Select Color</option>
+            <option>Black</option>
+            <option>White</option>
+            <option>Red</option>
+            <option>Blue</option>
+        </select>
+
+        <input type="file" name="Design Image" accept="image/*" required>
+
+        <textarea name="Notes" placeholder="Any special instruction?"></textarea>
+
+        <button type="submit">Submit Design</button>
+
+    </form>
+</div>
+
 
         <div class="product-card" style="position:relative;">
     <div style="
