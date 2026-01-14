@@ -200,3 +200,69 @@ MOBILE
     cursor:pointer;
 }
 
+.custom-btn{
+    display:block;
+    margin:80px auto;
+    width:fit-content;
+    background:#00ffcc;
+    color:#000;
+    padding:14px 36px;
+    border-radius:40px;
+    font-weight:800;
+    cursor:pointer;
+}
+
+.custom-popup{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.75);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.custom-box{
+    background:#111;
+    padding:30px;
+    border-radius:16px;
+    width:90%;
+    max-width:420px;
+    color:white;
+    position:relative;
+}
+
+.custom-box input,
+.custom-box select{
+    width:100%;
+    padding:12px;
+    margin-bottom:12px;
+    background:#000;
+    border:1px solid #333;
+    color:white;
+    border-radius:6px;
+}
+
+.custom-box button{
+    width:100%;
+    padding:14px;
+    background:#00ffcc;
+    border:none;
+    font-weight:800;
+    cursor:pointer;
+}
+
+.close{
+    position:absolute;
+    top:10px;
+    right:15px;
+    font-size:26px;
+    cursor:pointer;
+}
+
+#preview{
+    width:100%;
+    margin:10px 0;
+    border-radius:10px;
+    display:none;
+}
