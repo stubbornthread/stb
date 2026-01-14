@@ -83,3 +83,22 @@ html, body{
         grid-template-columns:repeat(2,1fr);
     }
 }
+/* Force no horizontal overflow anywhere */
+*{
+    max-width:100%;
+    box-sizing:border-box;
+}
+
+body{
+    overflow-x:hidden !important;
+}
+
+/* Footer must be full width */
+.footer-section{
+    position:relative;
+    left:0;
+    right:0;
+    width:100vw;
+    margin-left:calc(-50vw + 50%);
+    margin-right:calc(-50vw + 50%);
+}
