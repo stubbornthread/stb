@@ -5,15 +5,16 @@
     grid-template-columns:repeat(3,1fr);
     gap:30px;
     margin-top:40px;
-}
 .image-only-grid img{
     width:100%;
-    height:360px;
-    object-fit:cover;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
     border-radius:12px;
     box-shadow:0 10px 25px rgba(0,0,0,0.08);
     transition:.4s;
 }
+
+
 .image-only-grid img:hover{
     transform:scale(1.05);
 }
