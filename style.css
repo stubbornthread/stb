@@ -344,3 +344,44 @@ MOBILE
     grid-template-columns:1fr;
   }
 }
+.menu-icon{
+    font-size:32px;
+    color:white;
+    cursor:pointer;
+    display:none;
+}
+
+#navMenu{
+    display:flex;
+    gap:30px;
+}
+
+@media(max-width:768px){
+    .menu-icon{
+        display:block;
+    }
+
+    #navMenu{
+        position:absolute;
+        top:70px;
+        right:20px;
+        background:#000;
+        flex-direction:column;
+        width:200px;
+        padding:20px;
+        border-radius:14px;
+        display:none;
+        box-shadow:0 10px 30px rgba(0,0,0,.5);
+    }
+
+    #navMenu a{
+        padding:12px 0;
+        color:white;
+        text-decoration:none;
+        border-bottom:1px solid #222;
+    }
+
+    #navMenu.show{
+        display:flex;
+    }
+}
