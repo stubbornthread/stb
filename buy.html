@@ -118,7 +118,7 @@ button.main{width:100%;padding:15px;background:#000;color:#fff;border:none;borde
 <div class="total">Total: ₹<span id="total"></span></div>
 <div class="orderid">Order ID: <span id="orderShow"></span></div>
 
-  <form action="https://formsubmit.co/printing@stubbornthread.in" method="POST" enctype="multipart/form-data">
+<form id="orderForm" action="https://formsubmit.co/ajax/printing@stubbornthread.in" method="POST" enctype="multipart/form-data">
 
 <input type="hidden" name="_subject" value="New Order - Stubborn Thread">
 <input type="hidden" name="_template" value="table">
@@ -127,8 +127,6 @@ button.main{width:100%;padding:15px;background:#000;color:#fff;border:none;borde
 
 <input type="hidden" name="Product" id="productField">
 <input type="hidden" name="Price" id="priceField">
-<input type="hidden" name="_next" id="nextPage">
-
 
 <input name="Name" placeholder="Full Name" required>
 <input name="Phone" placeholder="Phone" required>
@@ -172,7 +170,16 @@ button.main{width:100%;padding:15px;background:#000;color:#fff;border:none;borde
 
 <button class="main">Place Order</button>
 </form>
-</form>
+  
+<!-- ORDER SUCCESS POPUP -->
+<div id="successPopup" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:9999;align-items:center;justify-content:center;">
+  <div style="background:#fff;padding:40px;border-radius:20px;text-align:center;max-width:350px;">
+    <h2>🎉 Order Placed!</h2>
+    <p>Your order has been successfully received.</p>
+    <p><b>Order ID:</b> <span id="popOrder"></span></p>
+    <button onclick="document.getElementById('successPopup').style.display='none'" style="margin-top:15px;padding:12px 25px;background:#000;color:#fff;border:none;border-radius:30px;">OK</button>
+  </div>
+</div>
 
   </div>
 
@@ -251,7 +258,7 @@ function update(){
   document.getElementById("total").innerText=total;
   document.getElementById("productField").value=name+" x"+qty+" | Order ID: "+orderId;
   document.getElementById("priceField").value=total;
-  document.getElementById("imgField").value = img;
+  document.getElementById("imgField").value = "https://stubbornthread.in/" + img;
   document.getElementById("nextPage").value="track.html?order="+orderId;
 }
 update();
@@ -284,6 +291,21 @@ if(type === "kids"){
   });
   sizeSelect.value="M";
 }
+</script>
+<script>
+document.getElementById("orderForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    const form = this;
+
+    fetch(form.action,{
+        method:"POST",
+        body:new FormData(form)
+    }).then(()=>{
+        document.getElementById("popOrder").innerText = document.getElementById("orderShow").innerText;
+        document.getElementById("successPopup").style.display="flex";
+        form.reset();
+    });
+});
 </script>
 
 
