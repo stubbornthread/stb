@@ -247,3 +247,11 @@ MOBILE
     background:#00ffcc;
     color:#000;
 }
+.custom-title{
+    font-family:'Montserrat', sans-serif;
+    font-size:32px;
+    font-weight:900;
+    letter-spacing:-1px;
+    text-align:center;
+    margin:30px 0 15px;
+}
