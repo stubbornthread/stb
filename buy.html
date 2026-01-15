@@ -178,7 +178,11 @@ button.main{width:100%;padding:15px;background:#000;color:#fff;border:none;borde
     <h2>🎉 Order Placed!</h2>
     <p>Your order has been successfully received.</p>
     <p><b>Order ID:</b> <span id="popOrder"></span></p>
-    <button onclick="document.getElementById('successPopup').style.display='none'" style="margin-top:15px;padding:12px 25px;background:#000;color:#fff;border:none;border-radius:30px;">OK</button>
+<a id="waBtn" target="_blank" style="display:block;margin-top:15px;padding:12px 25px;background:#25D366;color:#fff;border-radius:30px;text-decoration:none;font-weight:700;">
+Send Order on WhatsApp
+</a>
+
+<button onclick="document.getElementById('successPopup').style.display='none'" style="margin-top:15px;padding:12px 25px;background:#000;color:#fff;border:none;border-radius:30px;">Close</button>
   </div>
 </div>
 
@@ -304,10 +308,14 @@ document.getElementById("orderForm").addEventListener("submit", function(e){
    .then(()=>{
     document.getElementById("popOrder").innerText = document.getElementById("orderShow").innerText;
     document.getElementById("successPopup").style.display="flex";
+     
+const phone = form.querySelector("input[name='Phone']").value;
+const order = document.getElementById("orderShow").innerText;
+const msg = `Hi 👋 Your order ${order} has been placed successfully with STUBBORN THREAD. We will contact you shortly.`;
 
-    const phone = form.querySelector("input[name='Phone']").value;
-    const msg = `Hi 👋 Your order ${document.getElementById("orderShow").innerText} has been placed successfully with STUBBORN THREAD. We will contact you shortly.`;
-    window.open("https://wa.me/91"+phone+"?text="+encodeURIComponent(msg), "_blank");
+document.getElementById("waBtn").href =
+   "https://wa.me/91" + phone + "?text=" + encodeURIComponent(msg);
+
 
     form.reset();
 });
