@@ -51,6 +51,12 @@ input, select, textarea{
     margin-bottom:8px;
 }
 
+.grid-2{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
 button{
     width:100%;
     padding:15px;
@@ -81,7 +87,20 @@ button{
 
 <input type="text" name="Name" placeholder="Full Name" required>
 <input type="tel" name="Phone" placeholder="Phone Number" required>
-<input type="email" name="Email" placeholder="Email" required>
+
+<input type="email" name="Email" placeholder="Email (optional)">
+
+<div class="grid-2">
+<input type="text" name="City" placeholder="City" required>
+<input type="text" name="State" placeholder="State" required>
+</div>
+
+<div class="grid-2">
+<input type="text" name="Pincode" placeholder="Pincode" required>
+<input type="text" name="Landmark" placeholder="Landmark">
+</div>
+
+<textarea name="Address" placeholder="Full Address" required></textarea>
 
 <select name="Size" required>
 <option value="">Select Size</option>
@@ -93,8 +112,6 @@ button{
 <option>Black</option><option>White</option><option>Red</option><option>Blue</option>
 </select>
 
-<textarea name="Address" placeholder="Delivery Address" required></textarea>
-
 <button type="submit">Place Order</button>
 
 </form>
@@ -105,11 +122,11 @@ const params = new URLSearchParams(window.location.search);
 const name = params.get("name");
 const price = params.get("price");
 
-document.getElementById("pname").innerText = name;
-document.getElementById("pprice").innerText = price;
+document.getElementById("pname").innerText = name || "";
+document.getElementById("pprice").innerText = price || "";
 
-document.getElementById("productField").value = name;
-document.getElementById("priceField").value = price;
+document.getElementById("productField").value = name || "";
+document.getElementById("priceField").value = price || "";
 </script>
 
 </body>
