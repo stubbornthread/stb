@@ -75,7 +75,65 @@ button.main{width:100%;padding:15px;background:#000;color:#fff;border:none;borde
   .checkout{grid-template-columns:1fr;}
 }
 </style>
+  .trust-wrap{
+    margin-top:40px;
+    padding:40px 20px;
+    background:#f9f9f9;
+    border-radius:20px;
+}
+
+.trust-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+    margin-bottom:30px;
+}
+
+.trust-box{
+    background:#fff;
+    padding:25px 20px;
+    border-radius:16px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.05);
+}
+
+.trust-box i{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.trust-box h4{
+    margin:8px 0;
+    font-size:16px;
+    font-weight:900;
+}
+
+.trust-box p{
+    font-size:13px;
+    color:#666;
+}
+
+.rating-box{
+    text-align:center;
+    font-size:22px;
+    font-weight:900;
+    color:#f6b100;
+}
+
+.rating-box div{
+    color:#000;
+    font-size:14px;
+    margin-top:8px;
+}
+
+@media(max-width:900px){
+    .trust-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
 </head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <body>
 
@@ -170,6 +228,41 @@ button.main{width:100%;padding:15px;background:#000;color:#fff;border:none;borde
 
 <button class="main">Place Order</button>
 </form>
+<!-- TRUST SECTION -->
+<div class="trust-wrap">
+
+  <div class="trust-grid">
+    <div class="trust-box">
+      <i class="fa-solid fa-shirt"></i>
+      <h4>Premium Fabric</h4>
+      <p>180+ GSM bio-washed cotton</p>
+    </div>
+
+    <div class="trust-box">
+      <i class="fa-solid fa-truck"></i>
+      <h4>Fast Delivery</h4>
+      <p>Pan-India shipping</p>
+    </div>
+
+    <div class="trust-box">
+      <i class="fa-solid fa-rotate-left"></i>
+      <h4>Easy Returns</h4>
+      <p>7-day hassle free</p>
+    </div>
+
+    <div class="trust-box">
+      <i class="fa-solid fa-circle-check"></i>
+      <h4>Quality Check</h4>
+      <p>Each product verified</p>
+    </div>
+  </div>
+
+  <div class="rating-box">
+    ★★★★★  
+    <div>Rated 5/5 by <b>1,000+</b> happy customers</div>
+  </div>
+
+</div>
 
 </div>
 </div>
