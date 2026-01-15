@@ -201,71 +201,42 @@
     </div>
 
    <div class="product-grid">
+<div class="product-grid" id="productGrid"></div>
 
-<!-- PRODUCT 1 -->
-<div class="product-card" style="position:relative;">
-  <div class="sale-badge">-20% OFF</div>
+<script>
+const images = [
+"1.jpeg","11 (Medium).png","112 (Medium).png","12we (Medium).png","1a.jpg","1aa.jpg",
+"1l (Medium).png","1q (Medium).png","1qq (Medium).png","2.jpeg","23wed (Medium).png",
+"2a..jpg","2aa.jpg","2we (Medium).png","3.jpeg","3a.jpg","3aa.jpg","4a.jpg","4aa.jpg",
+"5a.jpg","5aa.jpg","6a.jpg","6aa.jpg","7a.jpg","7aa.jpg"
+];
 
-  <img src="images/7a.jpg">
-  <h3>Tom & Jerry Best Friends Tee</h3>
-  <p>₹599</p>
+const titles = [
+"Cute Panda Tee","Little Hero Tee","Funny Cartoon Tee","Space Kid Tee","Magic Unicorn Tee",
+"Cool Dino Tee","Happy Bunny Tee","Super Star Tee","Tiny Champ Tee","Playful Kitty Tee"
+];
 
-  <a href="buy.html?name=Tom%20%26%20Jerry%20Best%20Friends%20Tee&price=599&img=images/7a.jpg" class="buy-now-btn">
-    Buy Now <i>→</i>
-  </a>
-</div>
+const grid = document.getElementById("productGrid");
 
-<!-- PRODUCT 2 -->
-<div class="product-card" style="position:relative;">
-  <div class="sale-badge">-30% OFF</div>
+images.forEach(img=>{
+  const price = Math.floor(Math.random() * (599 - 279 + 1)) + 279;
+  const off = Math.floor(Math.random() * (55 - 20 + 1)) + 20;
+  const title = titles[Math.floor(Math.random() * titles.length)] + " – Stubborn Thread";
 
-  <img src="images/6a.jpg">
-  <h3>Cute Cartoon Duo Tee</h3>
-  <p>₹549</p>
+  grid.innerHTML += `
+  <div class="product-card" style="position:relative;">
+    <div class="sale-badge">-${off}% OFF</div>
+    <img src="images/${img}">
+    <h3>${title}</h3>
+    <p>₹${price}</p>
+    <a href="buy.html?name=${encodeURIComponent(title)}&price=${price}&img=images/${img}" class="buy-now-btn">
+      Buy Now <i>→</i>
+    </a>
+  </div>
+  `;
+});
+</script>
 
-  <a href="buy.html?name=Cute%20Cartoon%20Duo%20Tee&price=549&img=images/6a.jpg" class="buy-now-btn">
-    Buy Now <i>→</i>
-  </a>
-</div>
-
-<!-- PRODUCT 3 -->
-<div class="product-card" style="position:relative;">
-  <div class="sale-badge">-40% OFF</div>
-
-  <img src="images/3a.jpg">
-  <h3>Tom & Jerry Classic Tee</h3>
-  <p>₹449</p>
-
-  <a href="buy.html?name=Tom%20%26%20Jerry%20Classic%20Tee&price=449&img=images/3a.jpg" class="buy-now-btn">
-    Buy Now <i>→</i>
-  </a>
-</div>
-
-<!-- PRODUCT 4 -->
-<div class="product-card" style="position:relative;">
-  <div class="sale-badge">-30% OFF</div>
-
-  <img src="images/4a.jpg">
-  <h3>Love & Fun Comic Tee</h3>
-  <p>₹499</p>
-
-  <a href="buy.html?name=Love%20%26%20Fun%20Comic%20Tee&price=499&img=images/4a.jpg" class="buy-now-btn">
-    Buy Now <i>→</i>
-  </a>
-</div>
-
-<!-- PRODUCT 5 -->
-<div class="product-card" style="position:relative;">
-  <div class="sale-badge">-50% OFF</div>
-
-  <img src="images/5a.jpg">
-  <h3>Playful Jerry & Tom Tee</h3>
-  <p>₹399</p>
-
-  <a href="buy.html?name=Playful%20Jerry%20%26%20Tom%20Tee&price=399&img=images/5a.jpg" class="buy-now-btn">
-    Buy Now <i>→</i>
-  </a>
-</div>
 
 </div>
 
