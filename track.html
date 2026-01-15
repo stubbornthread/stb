@@ -20,12 +20,21 @@ button{
 }
 </style>
 </head>
+  <script>
+const params = new URLSearchParams(window.location.search);
+const order = params.get("order");
+
+const msg = "Hello Stubborn Thread! I have placed my order. My Order ID is " + order;
+
+document.getElementById("waLink").href =
+  "https://wa.me/919602838028?text=" + encodeURIComponent(msg);
+</script>
 <body>
 <div class="box">
 <h1>Order Received 🎉</h1>
 <p>Our team will confirm your order on WhatsApp</p>
-<a href="https://wa.me/919602838028">
-<button>Confirm on WhatsApp</button>
+<a id="waLink">
+  <button>Confirm on WhatsApp</button>
 </a>
 <p style="margin-top:40px">Your order is being prepared</p>
 </div>
