@@ -127,7 +127,8 @@ button{
 
 </form>
 </div>
-
+<input type="hidden" name="_next" value="track.html">
+<input type="hidden" name="_captcha" value="false">
 <script>
 const params = new URLSearchParams(window.location.search);
 const name = params.get("name");
@@ -148,3 +149,4 @@ document.getElementById("priceField").value = price || "";
 
 </body>
 </html>
+
