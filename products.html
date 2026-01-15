@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Shop | Stubborn Thread</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+
+<style>
+body{margin:0;font-family:Montserrat,sans-serif;background:#fff;color:#000}
+
+/* HEADER */
+header{
+  background:#000;color:#fff;padding:18px 5%;
+  display:flex;justify-content:space-between;align-items:center;
+}
+nav a{color:#fff;text-decoration:none;margin-left:20px;font-size:14px}
+
+/* PAGE TITLE */
+.page-title{text-align:center;padding:60px 20px;}
+.page-title h1{font-size:40px;font-weight:900}
+
+/* PRODUCT GRID */
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:30px;
+  padding:0 5% 80px;
+  max-width:1300px;
+  margin:auto;
+}
+
+.product-card{
+  background:#f6f6f6;
+  border-radius:16px;
+  overflow:hidden;
+  text-align:center;
+  padding-bottom:20px;
+}
+
+.product-card img{
+  width:100%;
+  aspect-ratio:3/4;
+  object-fit:cover;
+}
+
+.product-card h3{font-size:14px;padding:10px}
+.product-card p{font-weight:900}
+
+.buy-btn{
+  display:inline-block;
+  padding:10px 22px;
+  background:#000;
+  color:#fff;
+  border-radius:25px;
+  text-decoration:none;
+  font-size:13px;
+}
+
+/* FOOTER */
+.footer{
+  background:#000;color:#fff;padding:60px 5%;
+  text-align:center;
+  margin-top:80px;
+}
+.footer a{color:#aaa;text-decoration:none;margin:0 10px}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div><b>STUBBORN THREAD</b></div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Men</a>
+    <a href="products.html">Women</a>
+    <a href="products.html">Kids</a>
+    <a href="products.html">New Arrivals</a>
+  </nav>
+</header>
+
+<div class="page-title">
+  <h1>All Products</h1>
+</div>
+
+<div class="product-grid" id="grid"></div>
+
+<footer class="footer">
+  <p>© 2026 Stubborn Thread</p>
+</footer>
+
+<script>
+const images=[
+"1.jpeg","11 (Medium).png","112 (Medium).png","12we (Medium).png","1a.jpg","1aa.jpg",
+"1l (Medium).png","1q (Medium).png","1qq (Medium).png","2.jpeg","23wed (Medium).png",
+"2a..jpg","2aa.jpg","2we (Medium).png","3.jpeg","3a.jpg","3aa.jpg","4a.jpg","4aa.jpg",
+"5a.jpg","5aa.jpg","6a.jpg","6aa.jpg","7a.jpg","7aa.jpg"
+];
+
+const titles=["Cute Panda Tee","Little Hero Tee","Space Kid Tee","Magic Unicorn Tee","Cool Dino Tee","Tiny Champ Tee"];
+
+const grid=document.getElementById("grid");
+
+images.forEach(img=>{
+  const price=Math.floor(Math.random()*300)+299;
+  const title=titles[Math.floor(Math.random()*titles.length)]+" – Stubborn Thread";
+
+  grid.innerHTML+=`
+    <div class="product-card">
+      <img src="images/${img}">
+      <h3>${title}</h3>
+      <p>₹${price}</p>
+      <a class="buy-btn" href="buy.html?name=${encodeURIComponent(title)}&price=${price}&img=images/${img}">
+        Buy Now
+      </a>
+    </div>
+  `;
+});
+</script>
+
+</body>
+</html>
