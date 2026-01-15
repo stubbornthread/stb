@@ -301,11 +301,17 @@ document.getElementById("orderForm").addEventListener("submit", function(e){
     fetch(form.action,{
         method:"POST",
         body:new FormData(form)
-    }).then(()=>{
-        document.getElementById("popOrder").innerText = document.getElementById("orderShow").innerText;
-        document.getElementById("successPopup").style.display="flex";
-        form.reset();
-    });
+   .then(()=>{
+    document.getElementById("popOrder").innerText = document.getElementById("orderShow").innerText;
+    document.getElementById("successPopup").style.display="flex";
+
+    const phone = form.querySelector("input[name='Phone']").value;
+    const msg = `Hi 👋 Your order ${document.getElementById("orderShow").innerText} has been placed successfully with STUBBORN THREAD. We will contact you shortly.`;
+    window.open("https://wa.me/91"+phone+"?text="+encodeURIComponent(msg), "_blank");
+
+    form.reset();
+});
+
 });
 </script>
 
