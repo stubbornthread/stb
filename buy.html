@@ -75,62 +75,63 @@ button.main{width:100%;padding:15px;background:#000;color:#fff;border:none;borde
   .checkout{grid-template-columns:1fr;}
 }
 </style>
-  .trust-wrap{
-    margin-top:40px;
-    padding:40px 20px;
-    background:#f9f9f9;
-    border-radius:20px;
+ .about-trust{
+    width:100%;
+    padding:60px 0 40px;
 }
 
-.trust-grid{
+.about-trust-grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:25px;
-    margin-bottom:30px;
+    gap:30px;
+    max-width:1200px;
+    margin:auto;
 }
 
-.trust-box{
-    background:#fff;
-    padding:25px 20px;
-    border-radius:16px;
+.about-trust-box{
+    background:#f6f6f6;
+    padding:40px 20px;
+    border-radius:22px;
     text-align:center;
-    box-shadow:0 10px 25px rgba(0,0,0,.05);
 }
 
-.trust-box i{
-    font-size:28px;
-    margin-bottom:15px;
+.about-trust-box i{
+    font-size:32px;
+    margin-bottom:18px;
 }
 
-.trust-box h4{
-    margin:8px 0;
-    font-size:16px;
+.about-trust-box h3{
+    font-size:18px;
     font-weight:900;
+    margin-bottom:8px;
 }
 
-.trust-box p{
-    font-size:13px;
-    color:#666;
-}
-
-.rating-box{
-    text-align:center;
-    font-size:22px;
-    font-weight:900;
-    color:#f6b100;
-}
-
-.rating-box div{
-    color:#000;
+.about-trust-box p{
     font-size:14px;
-    margin-top:8px;
+    color:#444;
+}
+
+.about-rating{
+    text-align:center;
+    margin-top:40px;
+    font-size:26px;
+    color:#f4b000;
+    font-weight:900;
+}
+
+.about-rating span{
+    display:block;
+    font-size:14px;
+    color:#000;
+    margin-top:10px;
 }
 
 @media(max-width:900px){
-    .trust-grid{
+    .about-trust-grid{
         grid-template-columns:repeat(2,1fr);
     }
 }
+
 
 </head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -228,39 +229,44 @@ button.main{width:100%;padding:15px;background:#000;color:#fff;border:none;borde
 
 <button class="main">Place Order</button>
 </form>
-<!-- TRUST SECTION -->
-<div class="trust-wrap">
+</form>
 
-  <div class="trust-grid">
-    <div class="trust-box">
+<!-- ABOUT STYLE TRUST SECTION -->
+<div class="about-trust">
+  <div class="about-trust-grid">
+
+    <div class="about-trust-box">
       <i class="fa-solid fa-shirt"></i>
-      <h4>Premium Fabric</h4>
+      <h3>Premium Fabric</h3>
       <p>180+ GSM bio-washed cotton</p>
     </div>
 
-    <div class="trust-box">
+    <div class="about-trust-box">
       <i class="fa-solid fa-truck"></i>
-      <h4>Fast Delivery</h4>
+      <h3>Fast Delivery</h3>
       <p>Pan-India shipping</p>
     </div>
 
-    <div class="trust-box">
+    <div class="about-trust-box">
       <i class="fa-solid fa-rotate-left"></i>
-      <h4>Easy Returns</h4>
+      <h3>Easy Returns</h3>
       <p>7-day hassle free</p>
     </div>
 
-    <div class="trust-box">
+    <div class="about-trust-box">
       <i class="fa-solid fa-circle-check"></i>
-      <h4>Quality Check</h4>
+      <h3>Quality Check</h3>
       <p>Each product verified</p>
     </div>
+
   </div>
 
-  <div class="rating-box">
-    ★★★★★  
-    <div>Rated 5/5 by <b>1,000+</b> happy customers</div>
+  <div class="about-rating">
+    ★★★★★
+    <span>Rated 5/5 by <b>1,000+</b> happy customers</span>
   </div>
+</div>
+
 
 </div>
 
