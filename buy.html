@@ -13,33 +13,48 @@ body{
   background:#f6f6f6;
 }
 
+/* Layout */
 .checkout{
-  max-width:560px;
+  max-width:1100px;
   margin:40px auto;
   background:#fff;
-  padding:25px;
+  padding:30px;
   border-radius:20px;
   box-shadow:0 20px 40px rgba(0,0,0,.15);
+  display:grid;
+  grid-template-columns:1fr 1.2fr;
+  gap:40px;
 }
 
-.product-box{
-  display:flex;
-  gap:15px;
-  margin-bottom:20px;
-}
-
-.product-box img{
-  width:100px;
-  height:120px;
+/* Left product */
+.big-img{
+  width:100%;
+  height:520px;
   object-fit:cover;
-  border-radius:10px;
+  border-radius:20px;
 }
 
+.product-desc{
+  margin-top:15px;
+}
+
+.product-desc h2{
+  font-size:28px;
+  margin-bottom:10px;
+}
+
+.product-desc p{
+  font-size:15px;
+  color:#555;
+  line-height:1.6;
+}
+
+/* Right side */
 .qty-box{
   display:flex;
   align-items:center;
   gap:12px;
-  margin-top:10px;
+  margin:15px 0;
 }
 
 .qty-box button{
@@ -65,28 +80,9 @@ input,select,textarea{
   margin-bottom:12px;
 }
 
-.total{
-  font-size:20px;
-  font-weight:900;
-  text-align:right;
-  margin:15px 0;
-}
-
-button.main{
-  width:100%;
-  padding:15px;
-  background:#000;
-  color:#fff;
-  border:none;
-  border-radius:30px;
-  font-weight:900;
-  cursor:pointer;
-}
-
 .coupon{
   display:flex;
   gap:10px;
-  margin-bottom:15px;
 }
 
 .coupon input{flex:1;}
@@ -121,10 +117,27 @@ button.main{
   margin-bottom:15px;
 }
 
+.total{
+  font-size:20px;
+  font-weight:900;
+  text-align:right;
+  margin:15px 0;
+}
+
 .orderid{
   text-align:center;
   font-weight:700;
   margin:10px 0;
+}
+
+button.main{
+  width:100%;
+  padding:15px;
+  background:#000;
+  color:#fff;
+  border:none;
+  border-radius:30px;
+  font-weight:900;
 }
 
 /* Footer */
@@ -146,38 +159,21 @@ button.main{
 .footer-logo{
   font-size:28px;
   font-weight:900;
-  letter-spacing:1px;
 }
 
 .footer-brand p{
   color:#aaa;
   font-size:14px;
-  margin-top:10px;
 }
-
-.footer-links h4,
-.footer-contact h4{
-  margin-bottom:15px;
-  font-size:15px;
-}
-
-.footer-links ul{list-style:none;padding:0;}
 
 .footer-links a{
   color:#aaa;
   text-decoration:none;
   display:block;
   margin-bottom:8px;
-  font-size:14px;
 }
 
 .footer-links a:hover{color:#fff;}
-
-.footer-contact p{
-  color:#aaa;
-  font-size:14px;
-  margin-bottom:8px;
-}
 
 .footer-bottom{
   text-align:center;
@@ -187,6 +183,12 @@ button.main{
   color:#666;
   font-size:13px;
 }
+
+@media(max-width:900px){
+  .checkout{
+    grid-template-columns:1fr;
+  }
+}
 </style>
 </head>
 
@@ -194,16 +196,22 @@ button.main{
 
 <div class="checkout">
 
-<div class="product-box">
-  <img id="pimg">
-  <div>
-    <h3 id="pname"></h3>
-    <div class="qty-box">
-      <button type="button" onclick="qtyMinus()">−</button>
-      <span id="qty">1</span>
-      <button type="button" onclick="qtyPlus()">+</button>
-    </div>
+<!-- LEFT -->
+<div>
+  <img id="pimg" class="big-img">
+  <div class="product-desc">
+    <h2 id="pname"></h2>
+    <p id="pdesc"></p>
   </div>
+</div>
+
+<!-- RIGHT -->
+<div>
+
+<div class="qty-box">
+  <button type="button" onclick="qtyMinus()">−</button>
+  <span id="qty">1</span>
+  <button type="button" onclick="qtyPlus()">+</button>
 </div>
 
 <div class="coupon">
@@ -215,6 +223,7 @@ button.main{
 <div class="orderid">Order ID: <span id="orderShow"></span></div>
 
 <form action="https://formsubmit.co/printing@stubbornthread.in" method="POST" enctype="multipart/form-data">
+
 <input type="hidden" name="Product" id="productField">
 <input type="hidden" name="Price" id="priceField">
 <input type="hidden" name="_next" id="nextPage">
@@ -225,7 +234,7 @@ button.main{
 
 <div class="upload-box">
   <input type="file" name="Custom Design" id="designInput" accept="image/*">
-  Upload your design for custom print (optional)
+  Upload your custom design (optional)
 </div>
 <img id="preview">
 
@@ -236,10 +245,12 @@ button.main{
 <input name="State" placeholder="State" required>
 <input name="Pincode" placeholder="Pincode" required>
 <input name="Landmark" placeholder="Landmark">
-<textarea name="Address" placeholder="House no, Street, Area" required></textarea>
+<textarea name="Address" placeholder="Full Address" required></textarea>
 
 <button class="main">Place Order</button>
 </form>
+
+</div>
 </div>
 
 <footer class="footer-section">
@@ -250,17 +261,12 @@ button.main{
     </div>
 
     <div class="footer-links">
-      <h4>Shop</h4>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/#shop">Shop</a></li>
-        <li><a href="/#kids">Kids</a></li>
-      </ul>
+      <a href="/">Home</a>
+      <a href="/#shop">Shop</a>
+      <a href="/#kids">Kids</a>
     </div>
 
-    <div class="footer-contact">
-      <h4>Contact</h4>
-      <p>Jhansal, Rajasthan</p>
+    <div class="footer-brand">
       <p>printing@stubbornthread.in</p>
       <p>+91 96028 38028</p>
     </div>
@@ -280,15 +286,24 @@ const img=params.get("img");
 document.getElementById("pname").innerText=name;
 document.getElementById("pimg").src=img;
 
+let desc="Premium quality cotton T-shirt with long-lasting HD print. Soft, breathable and perfect for daily wear.";
+
+if(name){
+ if(name.toLowerCase().includes("tom")) desc="Cute Tom & Jerry printed premium cotton T-shirt. Fun, colorful and loved by kids & teens.";
+ if(name.toLowerCase().includes("love")) desc="Romantic and playful design on soft cotton fabric. Perfect gift for couples and kids.";
+ if(name.toLowerCase().includes("cartoon")) desc="High quality cartoon print on breathable cotton T-shirt. Durable and super comfortable.";
+}
+
+document.getElementById("pdesc").innerText=desc;
+
 let qty=1;
 let discount=0;
-
 const orderId="ST"+Math.floor(100000+Math.random()*900000);
 document.getElementById("orderShow").innerText=orderId;
 
 function update(){
-  document.getElementById("qty").innerText=qty;
   let total=(price*qty)-discount;
+  document.getElementById("qty").innerText=qty;
   document.getElementById("total").innerText=total;
   document.getElementById("productField").value=name+" x"+qty+" | Order ID: "+orderId;
   document.getElementById("priceField").value=total;
