@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About Us | Stubborn Thread</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" href="favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<style>
+.about-hero{
+    background:#000;
+    color:#fff;
+    padding:120px 8% 80px;
+    text-align:center;
+}
+.about-hero h1{
+    font-size:4rem;
+    font-weight:900;
+    letter-spacing:-1px;
+}
+.about-hero p{
+    max-width:800px;
+    margin:20px auto 0;
+    font-size:18px;
+    color:#aaa;
+}
+
+.about-section{
+    padding:80px 8%;
+    max-width:1200px;
+    margin:auto;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.about-text h2{
+    font-size:32px;
+    margin-bottom:20px;
+}
+.about-text p{
+    color:#555;
+    line-height:1.8;
+    font-size:16px;
+}
+
+.about-card{
+    background:#000;
+    color:#fff;
+    padding:50px;
+    border-radius:20px;
+}
+.about-card h3{
+    font-size:28px;
+    margin-bottom:15px;
+}
+.about-card p{
+    color:#bbb;
+    line-height:1.7;
+}
+
+.values{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+    margin-top:60px;
+}
+
+.value-box{
+    background:#f5f5f5;
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+}
+.value-box h4{
+    margin-top:15px;
+    font-size:20px;
+}
+.value-box p{
+    font-size:14px;
+    color:#555;
+}
+
+@media(max-width:900px){
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+    .values{
+        grid-template-columns:1fr;
+    }
+    .about-hero h1{
+        font-size:3rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- SAME HEADER AS HOME -->
+<header>
+    <div class="logo brand-font">Stubborn Thread</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#men">Men</a>
+        <a href="#women">Women</a>
+        <a href="#kids">Kids</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="about-hero">
+    <h1>More Than A T-Shirt</h1>
+    <p>
+        Stubborn Thread is a movement for people who never give up.
+        Every tee we create represents courage, attitude, and fearless individuality.
+    </p>
+</section>
+
+<!-- BRAND STORY -->
+<section class="about-section">
+    <div class="about-grid">
+        <div class="about-text">
+            <h2>Our Story</h2>
+            <p>
+                Stubborn Thread was born from the idea that clothing should do more than just look good —
+                it should speak for who you are. We started as a small passion project and grew into a bold
+                fashion label built for people who don't follow trends — they create them.
+            </p>
+            <p>
+                Every design is crafted to make you feel confident, powerful, and unapologetically yourself.
+                From street style to statement pieces, our threads are made for the fearless.
+            </p>
+        </div>
+
+        <div class="about-card">
+            <h3>Why We Exist</h3>
+            <p>
+                We exist to empower self-expression through premium fashion.
+                We believe your clothes should reflect your mindset —
+                bold, unstoppable, and always authentic.
+            </p>
+        </div>
+    </div>
+
+    <!-- VALUES -->
+    <div class="values">
+        <div class="value-box">
+            <h4>Premium Quality</h4>
+            <p>High-GSM fabrics, long-lasting prints and perfect fits.</p>
+        </div>
+        <div class="value-box">
+            <h4>Bold Identity</h4>
+            <p>Our designs are made to stand out, just like you.</p>
+        </div>
+        <div class="value-box">
+            <h4>Made in India</h4>
+            <p>Proudly designed and produced for modern Indian creators.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SAME FOOTER -->
+<footer class="footer-section">
+    <div class="footer-container">
+        <div class="footer-brand">
+            <span class="footer-logo">Stubborn Thread</span>
+            <p>Premium quality t-shirts for those who never back down.</p>
+        </div>
+
+        <div class="footer-links">
+            <h4>Shop</h4>
+            <ul>
+                <li><a href="index.html#men">Men</a></li>
+                <li><a href="index.html#women">Women</a></li>
+                <li><a href="index.html#kids">Kids</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-contact">
+            <h4>Contact</h4>
+            <p>printing@stubbornthread.in</p>
+            <p>+91 96028 38028</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Stubborn Thread. All rights reserved.
+    </div>
+</footer>
+
+</body>
+</html>
