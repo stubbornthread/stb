@@ -183,14 +183,19 @@
 <body>
 
     <header>
-        <div class="logo brand-font">Stubborn Thread</div>
-        <nav>
-            <a href="#men">Men</a>
-            <a href="#women">Women</a>
-            <a href="#kids">Kids</a>
-        </nav>
-    </header>
+    <div class="logo brand-font">Stubborn Thread</div>
 
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+    <nav id="navMenu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="#men">Men</a>
+        <a href="#women">Women</a>
+        <a href="#kids">Kids</a>
+    </nav>
+</header>
+    
     <section class="hero">
     <h1 class="brand-font">Stubborn Thread</h1>
         <p>Premium quality threads for those who never settle.</p>
@@ -354,6 +359,12 @@ document.getElementById("imgInput").addEventListener("change", function(e){
   img.style.display = "block";
 });
 </script>
+    <script>
+function toggleMenu(){
+    document.getElementById("navMenu").classList.toggle("show");
+}
+</script>
+
 
 </body>
 </html>
