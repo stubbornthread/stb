@@ -25,22 +25,73 @@ button.main{width:100%;padding:15px;background:#000;color:#fff;border:none;borde
 #preview{width:100%;border-radius:12px;display:none;margin-bottom:15px;}
 .orderid{text-align:center;font-weight:700;margin:10px 0;}
 </style>
-  .buy-footer{
-    margin-top:40px;
-    padding:50px 20px;
-    background:#000;
-    text-align:center;
-    color:#888;
+ .footer-section{
+  background:#000;
+  color:#fff;
+  padding:60px 5% 30px;
+  margin-top:60px;
 }
 
-.footer-brand{
-    font-family:'Montserrat', sans-serif;
-    font-size:32px;
-    font-weight:900;
-    letter-spacing:-1px;
-    color:#fff;
-    margin-bottom:10px;
+.footer-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:40px;
+  max-width:1200px;
+  margin:auto;
 }
+
+.footer-logo{
+  font-family:'Montserrat', sans-serif;
+  font-size:28px;
+  font-weight:900;
+  letter-spacing:-1px;
+  color:#fff;
+}
+
+.footer-brand p{
+  color:#aaa;
+  font-size:14px;
+  margin-top:10px;
+}
+
+.footer-links h4,
+.footer-contact h4{
+  margin-bottom:15px;
+  font-size:15px;
+}
+
+.footer-links ul{
+  list-style:none;
+  padding:0;
+}
+
+.footer-links a{
+  color:#aaa;
+  text-decoration:none;
+  display:block;
+  margin-bottom:8px;
+  font-size:14px;
+}
+
+.footer-links a:hover{
+  color:#fff;
+}
+
+.footer-contact p{
+  color:#aaa;
+  font-size:14px;
+  margin-bottom:8px;
+}
+
+.footer-bottom{
+  text-align:center;
+  margin-top:40px;
+  padding-top:20px;
+  border-top:1px solid #222;
+  color:#666;
+  font-size:13px;
+}
+
 
 </head>
 
@@ -100,10 +151,37 @@ button.main{width:100%;padding:15px;background:#000;color:#fff;border:none;borde
 
 <button class="main">Place Order</button>
 </form>
-<footer class="buy-footer">
-  <div class="footer-brand">Stubborn Thread</div>
-  <p>Premium custom printed T-shirts for bold creators.</p>
-  <p>© 2026 Stubborn Thread. All rights reserved.</p>
+<<footer class="footer-section">
+  <div class="footer-container">
+    
+    <div class="footer-brand">
+      <span class="footer-logo">Stubborn Thread</span>
+      <p>Premium custom printed T-shirts for bold creators.</p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/#shop">Shop</a></li>
+        <li><a href="/#kids">Kids</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p>📍 Jhansal, Rajasthan</p>
+      <p>✉️ printing@stubbornthread.in</p>
+      <p>📞 +91 96028 38028</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Stubborn Thread. All rights reserved.
+  </div>
+</footer>
+
 </footer>
 
 </div>
