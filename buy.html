@@ -7,10 +7,26 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
 
 <style>
-body{
-  margin:0;
-  font-family:Montserrat,sans-serif;
-  background:#f6f6f6;
+body{margin:0;font-family:Montserrat,sans-serif;background:#f6f6f6;}
+
+/* Header */
+.buy-header{
+  background:#000;
+  padding:18px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.buy-logo{
+  font-size:26px;
+  font-weight:900;
+  color:#fff;
+}
+.buy-nav a{
+  color:#fff;
+  margin-left:25px;
+  text-decoration:none;
+  font-size:14px;
 }
 
 /* Layout */
@@ -26,173 +42,51 @@ body{
   gap:40px;
 }
 
-/* Left product */
-.big-img{
-  width:100%;
-  height:520px;
-  object-fit:cover;
-  border-radius:20px;
-}
+.big-img{width:100%;height:520px;object-fit:cover;border-radius:20px;}
+.product-desc h2{font-size:28px;margin:10px 0;}
+.product-desc p{font-size:15px;color:#555;line-height:1.7;white-space:pre-line;}
 
-.product-desc{
-  margin-top:15px;
-}
+.qty-box{display:flex;align-items:center;gap:12px;margin:15px 0;}
+.qty-box button{width:34px;height:34px;background:#000;color:#fff;border:none;border-radius:50%;font-size:20px;}
+.qty-box span{font-size:18px;font-weight:800;}
 
-.product-desc h2{
-  font-size:28px;
-  margin-bottom:10px;
-}
+input,select,textarea{width:100%;padding:12px;border-radius:10px;border:1px solid #ddd;margin-bottom:12px;}
 
-.product-desc p{
-  font-size:15px;
-  color:#555;
-  line-height:1.6;
-}
-
-/* Right side */
-.qty-box{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  margin:15px 0;
-}
-
-.qty-box button{
-  width:34px;
-  height:34px;
-  border:none;
-  background:#000;
-  color:#fff;
-  font-size:20px;
-  border-radius:50%;
-}
-
-.qty-box span{
-  font-size:18px;
-  font-weight:800;
-}
-
-input,select,textarea{
-  width:100%;
-  padding:12px;
-  border-radius:10px;
-  border:1px solid #ddd;
-  margin-bottom:12px;
-}
-
-.coupon{
-  display:flex;
-  gap:10px;
-}
-
+.coupon{display:flex;gap:10px;}
 .coupon input{flex:1;}
+.coupon button{background:#000;color:#fff;border:none;padding:12px 18px;border-radius:10px;}
 
-.coupon button{
-  background:#000;
-  color:#fff;
-  border:none;
-  padding:12px 18px;
-  border-radius:10px;
-}
+.upload-box{border:2px dashed #aaa;padding:20px;text-align:center;border-radius:12px;margin-bottom:15px;position:relative;}
+.upload-box input{position:absolute;inset:0;opacity:0;}
+#preview{width:100%;border-radius:12px;display:none;margin-bottom:15px;}
 
-.upload-box{
-  border:2px dashed #aaa;
-  padding:20px;
-  text-align:center;
-  border-radius:12px;
-  margin-bottom:15px;
-  position:relative;
-}
+.total{font-size:20px;font-weight:900;text-align:right;margin:15px 0;}
+.orderid{text-align:center;font-weight:700;margin:10px 0;}
+button.main{width:100%;padding:15px;background:#000;color:#fff;border:none;border-radius:30px;font-weight:900;cursor:pointer;}
 
-.upload-box input{
-  position:absolute;
-  inset:0;
-  opacity:0;
-}
-
-#preview{
-  width:100%;
-  border-radius:12px;
-  display:none;
-  margin-bottom:15px;
-}
-
-.total{
-  font-size:20px;
-  font-weight:900;
-  text-align:right;
-  margin:15px 0;
-}
-
-.orderid{
-  text-align:center;
-  font-weight:700;
-  margin:10px 0;
-}
-
-button.main{
-  width:100%;
-  padding:15px;
-  background:#000;
-  color:#fff;
-  border:none;
-  border-radius:30px;
-  font-weight:900;
-}
-
-/* Footer */
-.footer-section{
-  background:#000;
-  color:#fff;
-  padding:60px 5% 30px;
-  margin-top:60px;
-}
-
-.footer-container{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:40px;
-  max-width:1200px;
-  margin:auto;
-}
-
-.footer-logo{
-  font-size:28px;
-  font-weight:900;
-}
-
-.footer-brand p{
-  color:#aaa;
-  font-size:14px;
-}
-
-.footer-links a{
-  color:#aaa;
-  text-decoration:none;
-  display:block;
-  margin-bottom:8px;
-}
-
+.footer-section{background:#000;color:#fff;padding:60px 5% 30px;margin-top:60px;}
+.footer-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px;max-width:1200px;margin:auto;}
+.footer-logo{font-size:28px;font-weight:900;}
+.footer-links a{color:#aaa;text-decoration:none;display:block;margin-bottom:8px;}
 .footer-links a:hover{color:#fff;}
-
-.footer-bottom{
-  text-align:center;
-  margin-top:40px;
-  padding-top:20px;
-  border-top:1px solid #222;
-  color:#666;
-  font-size:13px;
-}
+.footer-bottom{text-align:center;margin-top:40px;padding-top:20px;border-top:1px solid #222;color:#666;font-size:13px;}
 
 @media(max-width:900px){
-  .checkout{
-    grid-template-columns:1fr;
-  }
+  .checkout{grid-template-columns:1fr;}
 }
 </style>
 </head>
 
 <body>
+
+<header class="buy-header">
+  <div class="buy-logo">STUBBORN THREAD</div>
+  <nav class="buy-nav">
+    <a href="/">Men</a>
+    <a href="/">Women</a>
+    <a href="/">Kids</a>
+  </nav>
+</header>
 
 <div class="checkout">
 
@@ -223,7 +117,6 @@ button.main{
 <div class="orderid">Order ID: <span id="orderShow"></span></div>
 
 <form action="https://formsubmit.co/printing@stubbornthread.in" method="POST" enctype="multipart/form-data">
-
 <input type="hidden" name="Product" id="productField">
 <input type="hidden" name="Price" id="priceField">
 <input type="hidden" name="_next" id="nextPage">
@@ -255,26 +148,21 @@ button.main{
 
 <footer class="footer-section">
   <div class="footer-container">
-    <div class="footer-brand">
+    <div>
       <div class="footer-logo">STUBBORN THREAD</div>
       <p>Premium custom printed T-shirts for bold creators.</p>
     </div>
-
     <div class="footer-links">
       <a href="/">Home</a>
       <a href="/#shop">Shop</a>
       <a href="/#kids">Kids</a>
     </div>
-
-    <div class="footer-brand">
+    <div>
       <p>printing@stubbornthread.in</p>
       <p>+91 96028 38028</p>
     </div>
   </div>
-
-  <div class="footer-bottom">
-    © 2026 Stubborn Thread. All rights reserved.
-  </div>
+  <div class="footer-bottom">© 2026 Stubborn Thread. All rights reserved.</div>
 </footer>
 
 <script>
@@ -286,42 +174,26 @@ const img=params.get("img");
 document.getElementById("pname").innerText=name;
 document.getElementById("pimg").src=img;
 
-let desc = `
+const desc = `
 🔥 STUBBORN THREAD | The Unstoppable Style 🔥
 
-Har thread mein hai mazbooti aur har design mein hai attitude. Stubborn Thread lekar aaya hai aapke liye wo quality jo kabhi haar nahi maanti!
+100% Premium Combed Cotton  
+180+ GSM Heavy Duty Fabric  
+Bio-washed – no pilling  
+Double-stitched durability  
 
-💎 Fabric Quality
-• 100% Premium Combed Cotton  
-• Heavy Duty 180+ GSM – perfect fit & fall  
-• Bio-Washed finish – no pilling, extra shine  
-• Double-Stitched seams for durability  
+Color fast, pre-shrunk & machine washable  
 
-🧼 Wash & Durability  
-• Color fast – no fading  
-• Pre-shrunk – perfect fit always  
-• Machine wash friendly  
+7-Day easy return  
+Secure packaging  
+Stubborn quality check  
 
-🛡️ Trust & Returns  
-• 7-Day Easy Return / Exchange  
-• Secure & hygienic packaging  
-• Passed through Stubborn Quality Check  
-
-⚡ Style Tip  
 Wear it with sneakers and stand out.
 `;
 
-
-if(name){
- if(name.toLowerCase().includes("tom")) desc="Cute Tom & Jerry printed premium cotton T-shirt. Fun, colorful and loved by kids & teens.";
- if(name.toLowerCase().includes("love")) desc="Romantic and playful design on soft cotton fabric. Perfect gift for couples and kids.";
- if(name.toLowerCase().includes("cartoon")) desc="High quality cartoon print on breathable cotton T-shirt. Durable and super comfortable.";
-}
-
 document.getElementById("pdesc").innerText=desc;
 
-let qty=1;
-let discount=0;
+let qty=1,discount=0;
 const orderId="ST"+Math.floor(100000+Math.random()*900000);
 document.getElementById("orderShow").innerText=orderId;
 
@@ -337,20 +209,12 @@ update();
 
 function qtyPlus(){qty++;update();}
 function qtyMinus(){if(qty>1){qty--;update();}}
+function applyCoupon(){if(coupon.value=="ST20"){discount=price*qty*0.2;update();alert("20% OFF Applied");}}
 
-function applyCoupon(){
- if(document.getElementById("coupon").value=="ST20"){
-   discount=price*qty*0.2;
-   update();
-   alert("20% OFF Applied!");
- }
-}
-
-document.getElementById("designInput").addEventListener("change",function(e){
-  const imgp=document.getElementById("preview");
-  imgp.src=URL.createObjectURL(e.target.files[0]);
-  imgp.style.display="block";
-});
+designInput.onchange=e=>{
+  preview.src=URL.createObjectURL(e.target.files[0]);
+  preview.style.display="block";
+};
 </script>
 
 </body>
