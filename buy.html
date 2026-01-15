@@ -96,6 +96,8 @@ Order ID: <span id="orderShow"></span>
 
 
 <form action="https://formsubmit.co/printing@stubbornthread.in" method="POST" enctype="multipart/form-data">
+    <input type="hidden" id="nextPage" name="_next">
+
 
 <input type="hidden" name="Product" id="productField">
 <input type="hidden" name="Price" id="priceField">
@@ -140,6 +142,7 @@ document.getElementById("orderShow").innerText = orderId;
 const params = new URLSearchParams(window.location.search);
 const name = params.get("name");
 const price = params.get("price");
+    document.getElementById("nextPage").value = "track.html?order=" + orderId;
 
 document.getElementById("productField").value = (name || "") + " | Order ID: " + orderId;
 document.getElementById("pprice").innerText = price || "";
