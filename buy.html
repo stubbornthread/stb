@@ -4,160 +4,120 @@
 <meta charset="UTF-8">
 <title>Buy Now | Stubborn Thread</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
 
 <style>
-body{
-    margin:0;
-    font-family:Montserrat, sans-serif;
-    background:#f6f6f6;
-}
-
-.checkout{
-    max-width:500px;
-    margin:40px auto;
-    background:white;
-    padding:30px;
-    border-radius:20px;
-    box-shadow:0 20px 40px rgba(0,0,0,.15);
-}
-
-.checkout h2{
-    text-align:center;
-    margin-bottom:20px;
-}
-
-input, select, textarea{
-    width:100%;
-    padding:14px;
-    border-radius:10px;
-    border:1px solid #ddd;
-    margin-bottom:15px;
-    font-size:14px;
-}
-
-.order-summary{
-    background:#f1f1f1;
-    padding:15px;
-    border-radius:12px;
-    margin-bottom:20px;
-}
-
-.order-summary span{
-    display:flex;
-    justify-content:space-between;
-    font-weight:700;
-    margin-bottom:8px;
-}
-
-.grid-2{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:10px;
-}
-
-button{
-    width:100%;
-    padding:15px;
-    background:black;
-    color:white;
-    font-weight:900;
-    border:none;
-    border-radius:30px;
-    cursor:pointer;
-}
+body{margin:0;font-family:Montserrat;background:#f6f6f6;}
+.checkout{max-width:560px;margin:40px auto;background:#fff;padding:25px;border-radius:20px;box-shadow:0 20px 40px rgba(0,0,0,.15);}
+.product-box{display:flex;gap:15px;margin-bottom:20px;}
+.product-box img{width:100px;height:120px;object-fit:cover;border-radius:10px;}
+.qty-box{display:flex;align-items:center;gap:12px;margin-top:10px;}
+.qty-box button{width:34px;height:34px;border:none;background:#000;color:#fff;font-size:20px;border-radius:50%;}
+.qty-box span{font-size:18px;font-weight:800;}
+input,select,textarea{width:100%;padding:12px;border-radius:10px;border:1px solid #ddd;margin-bottom:12px;}
+.total{font-size:20px;font-weight:900;text-align:right;margin:15px 0;}
+button.main{width:100%;padding:15px;background:#000;color:#fff;border:none;border-radius:30px;font-weight:900;}
+.coupon{display:flex;gap:10px;margin-bottom:15px;}
+.coupon input{flex:1;}
+.coupon button{background:#000;color:#fff;border:none;padding:12px 18px;border-radius:10px;}
+.upload-box{border:2px dashed #aaa;padding:20px;text-align:center;border-radius:12px;margin-bottom:15px;position:relative;}
+.upload-box input{position:absolute;inset:0;opacity:0;}
+#preview{width:100%;border-radius:12px;display:none;margin-bottom:15px;}
+.orderid{text-align:center;font-weight:700;margin:10px 0;}
 </style>
-    <div style="font-size:28px;font-weight:900;text-align:center;margin:25px 0;">
-  Custom Print
-</div>
-
-<div style="border:2px dashed #aaa;padding:20px;border-radius:12px;text-align:center;cursor:pointer;position:relative;margin-bottom:15px;">
-  <input type="file" name="Custom Design" id="designInput" accept="image/*" style="position:absolute;inset:0;opacity:0;">
-  <p>Click or drag your photo here</p>
-</div>
-
-<img id="preview" style="width:100%;border-radius:12px;display:none;margin-bottom:15px;">
-
 </head>
 
 <body>
 
 <div class="checkout">
-<h2>Complete Your Order</h2>
 
-<div class="order-summary">
-<span><div>Product</div><div id="pname"></div></span>
-<span><div>Price</div><div>₹<span id="pprice"></span></div></span>
+<div class="product-box">
+  <img id="pimg">
+  <div>
+    <h3 id="pname"></h3>
+    <div class="qty-box">
+      <button type="button" onclick="qtyMinus()">−</button>
+      <span id="qty">1</span>
+      <button type="button" onclick="qtyPlus()">+</button>
+    </div>
+  </div>
 </div>
-    <p style="text-align:center;font-weight:700;">
-Order ID: <span id="orderShow"></span>
-</p>
 
+<div class="coupon">
+  <input id="coupon" placeholder="Coupon Code">
+  <button type="button" onclick="applyCoupon()">Apply</button>
+</div>
+
+<div class="total">Total: ₹<span id="total"></span></div>
+<div class="orderid">Order ID: <span id="orderShow"></span></div>
 
 <form action="https://formsubmit.co/printing@stubbornthread.in" method="POST" enctype="multipart/form-data">
-    <input type="hidden" id="nextPage" name="_next">
-
 
 <input type="hidden" name="Product" id="productField">
 <input type="hidden" name="Price" id="priceField">
+<input type="hidden" name="_next" id="nextPage">
+<input type="hidden" name="_captcha" value="false">
 
-<input type="text" name="Name" placeholder="Full Name" required>
-<input type="tel" name="Phone" placeholder="Phone Number" required>
+<input name="Name" placeholder="Full Name" required>
+<input name="Phone" placeholder="Phone" required>
 
-<input type="email" name="Email" placeholder="Email (optional)">
-
-<div class="grid-2">
-<input type="text" name="City" placeholder="City" required>
-<input type="text" name="State" placeholder="State" required>
+<div class="upload-box">
+  <input type="file" name="Custom Design" id="designInput" accept="image/*">
+  Upload your photo (optional)
 </div>
+<img id="preview">
 
-<div class="grid-2">
-<input type="text" name="Pincode" placeholder="Pincode" required>
-<input type="text" name="Landmark" placeholder="Landmark">
-</div>
-
+<select name="Size" required><option>S</option><option>M</option><option>L</option><option>XL</option></select>
+<select name="Color" required><option>Black</option><option>White</option><option>Red</option><option>Blue</option></select>
 <textarea name="Address" placeholder="Full Address" required></textarea>
 
-<select name="Size" required>
-<option value="">Select Size</option>
-<option>S</option><option>M</option><option>L</option><option>XL</option>
-</select>
-
-<select name="Color" required>
-<option value="">Select Color</option>
-<option>Black</option><option>White</option><option>Red</option><option>Blue</option>
-</select>
-
-<button type="submit">Place Order</button>
-
+<button class="main">Place Order</button>
 </form>
+
 </div>
-<input type="hidden" name="_next" value="track.html">
-<input type="hidden" name="_captcha" value="false">
-    const orderId = "ST" + Math.floor(100000 + Math.random() * 900000);
-document.getElementById("orderShow").innerText = orderId;
 
 <script>
-const params = new URLSearchParams(window.location.search);
-const name = params.get("name");
-const price = params.get("price");
-    document.getElementById("nextPage").value = "track.html?order=" + orderId;
+const params=new URLSearchParams(window.location.search);
+const name=params.get("name");
+const price=Number(params.get("price"));
+const img=params.get("img");
 
-document.getElementById("productField").value = (name || "") + " | Order ID: " + orderId;
-document.getElementById("pprice").innerText = price || "";
+document.getElementById("pname").innerText=name;
+document.getElementById("pimg").src=img;
 
-document.getElementById("productField").value = (name || "") + " | Order ID: " + orderId;
-document.getElementById("priceField").value = price || "";
-</script>
-    document.getElementById("designInput").addEventListener("change", function(e){
-  const img = document.getElementById("preview");
-  img.src = URL.createObjectURL(e.target.files[0]);
-  img.style.display = "block";
+let qty=1;
+let discount=0;
+
+const orderId="ST"+Math.floor(100000+Math.random()*900000);
+document.getElementById("orderShow").innerText=orderId;
+
+function update(){
+  document.getElementById("qty").innerText=qty;
+  let total=(price*qty)-discount;
+  document.getElementById("total").innerText=total;
+  document.getElementById("productField").value=name+" x"+qty+" | Order ID: "+orderId;
+  document.getElementById("priceField").value=total;
+  document.getElementById("nextPage").value="track.html?order="+orderId;
+}
+update();
+
+function qtyPlus(){qty++;update();}
+function qtyMinus(){if(qty>1){qty--;update();}}
+
+function applyCoupon(){
+ if(document.getElementById("coupon").value=="ST20"){
+   discount=price*qty*0.2;
+   update();
+   alert("20% OFF Applied!");
+ }
+}
+
+document.getElementById("designInput").addEventListener("change", function(e){
+  const imgp=document.getElementById("preview");
+  imgp.src=URL.createObjectURL(e.target.files[0]);
+  imgp.style.display="block";
 });
-
+</script>
 
 </body>
 </html>
-<input type="hidden" name="_next" value="track.html?order="+orderId+"&phone="+document.querySelector('[name=Phone]').value>
-
