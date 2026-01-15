@@ -146,7 +146,6 @@ button.main{width:100%;padding:15px;background:#000;color:#fff;border:none;borde
 
 <p id="fileName" style="font-size:13px;font-weight:700;margin-top:8px;"></p>
 
-
 <select name="Size" id="sizeSelect" required>
   <!-- Adult Sizes -->
   <optgroup label="Adult Sizes">
@@ -281,36 +280,38 @@ function qtyPlus(){qty++;update();}
 function qtyMinus(){if(qty>1){qty--;update();}}
 function applyCoupon(){if(coupon.value=="ST20"){discount=price*qty*0.2;update();alert("20% OFF Applied");}}
 
-designInput.onchange = function(e){
-  const file = e.target.files[0];
-  if(!file) return;
+document.getElementById("designInput").addEventListener("change", function(e){
+    const file = e.target.files[0];
+    if(!file) return;
 
-  preview.src = URL.createObjectURL(file);
-  preview.style.display = "block";
+    const preview = document.getElementById("preview");
+    const status = document.getElementById("uploadStatus");
+    const bar = document.getElementById("uploadBar");
+    const text = document.getElementById("uploadText");
+    const name = document.getElementById("fileName");
 
-  document.getElementById("fileName").innerText = "File: " + file.name;
+    preview.src = URL.createObjectURL(file);
+    preview.style.display = "block";
 
-  const status = document.getElementById("uploadStatus");
-  const bar = document.getElementById("uploadBar");
-  const text = document.getElementById("uploadText");
+    name.innerText = "File: " + file.name;
 
-  status.style.display = "block";
-  let percent = 0;
-  bar.style.width = "0%";
-  text.innerText = "Uploading… 0%";
+    status.style.display = "block";
+    let percent = 0;
+    bar.style.width = "0%";
+    text.innerText = "Uploading… 0%";
 
-  const timer = setInterval(()=>{
-    percent += Math.floor(Math.random() * 12);
-    if(percent >= 100){
-      percent = 100;
-      clearInterval(timer);
-      text.innerText = "Upload complete ✓";
-    }else{
-      text.innerText = "Uploading… " + percent + "%";
-    }
-    bar.style.width = percent + "%";
-  }, 300);
-};
+    const timer = setInterval(()=>{
+        percent += Math.floor(Math.random() * 10) + 5;
+        if(percent >= 100){
+            percent = 100;
+            clearInterval(timer);
+            text.innerText = "Upload complete ✓";
+        }else{
+            text.innerText = "Uploading… " + percent + "%";
+        }
+        bar.style.width = percent + "%";
+    }, 300);
+});
 
 </script>
 <script>
