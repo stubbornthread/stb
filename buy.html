@@ -90,6 +90,10 @@ button{
 <span><div>Product</div><div id="pname"></div></span>
 <span><div>Price</div><div>₹<span id="pprice"></span></div></span>
 </div>
+    <p style="text-align:center;font-weight:700;">
+Order ID: <span id="orderShow"></span>
+</p>
+
 
 <form action="https://formsubmit.co/printing@stubbornthread.in" method="POST" enctype="multipart/form-data">
 
@@ -129,15 +133,18 @@ button{
 </div>
 <input type="hidden" name="_next" value="track.html">
 <input type="hidden" name="_captcha" value="false">
+    const orderId = "ST" + Math.floor(100000 + Math.random() * 900000);
+document.getElementById("orderShow").innerText = orderId;
+
 <script>
 const params = new URLSearchParams(window.location.search);
 const name = params.get("name");
 const price = params.get("price");
 
-document.getElementById("pname").innerText = name || "";
+document.getElementById("productField").value = (name || "") + " | Order ID: " + orderId;
 document.getElementById("pprice").innerText = price || "";
 
-document.getElementById("productField").value = name || "";
+document.getElementById("productField").value = (name || "") + " | Order ID: " + orderId;
 document.getElementById("priceField").value = price || "";
 </script>
     document.getElementById("designInput").addEventListener("change", function(e){
