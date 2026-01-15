@@ -137,6 +137,15 @@ button.main{width:100%;padding:15px;background:#000;color:#fff;border:none;borde
   Upload your custom design (optional)
 </div>
 <img id="preview">
+  <div id="uploadStatus" style="display:none;margin-top:10px;">
+  <div style="height:8px;background:#ddd;border-radius:20px;overflow:hidden;">
+    <div id="uploadBar" style="height:100%;width:0%;background:#000;"></div>
+  </div>
+  <p id="uploadText" style="font-size:12px;margin-top:6px;color:#555;">Uploading… 0%</p>
+</div>
+
+<p id="fileName" style="font-size:13px;font-weight:700;margin-top:8px;"></p>
+
 
 <select name="Size" id="sizeSelect" required>
   <!-- Adult Sizes -->
@@ -272,10 +281,37 @@ function qtyPlus(){qty++;update();}
 function qtyMinus(){if(qty>1){qty--;update();}}
 function applyCoupon(){if(coupon.value=="ST20"){discount=price*qty*0.2;update();alert("20% OFF Applied");}}
 
-designInput.onchange=e=>{
-  preview.src=URL.createObjectURL(e.target.files[0]);
-  preview.style.display="block";
+designInput.onchange = function(e){
+  const file = e.target.files[0];
+  if(!file) return;
+
+  preview.src = URL.createObjectURL(file);
+  preview.style.display = "block";
+
+  document.getElementById("fileName").innerText = "File: " + file.name;
+
+  const status = document.getElementById("uploadStatus");
+  const bar = document.getElementById("uploadBar");
+  const text = document.getElementById("uploadText");
+
+  status.style.display = "block";
+  let percent = 0;
+  bar.style.width = "0%";
+  text.innerText = "Uploading… 0%";
+
+  const timer = setInterval(()=>{
+    percent += Math.floor(Math.random() * 12);
+    if(percent >= 100){
+      percent = 100;
+      clearInterval(timer);
+      text.innerText = "Upload complete ✓";
+    }else{
+      text.innerText = "Uploading… " + percent + "%";
+    }
+    bar.style.width = percent + "%";
+  }, 300);
 };
+
 </script>
 <script>
 const type = new URLSearchParams(window.location.search).get("type");
