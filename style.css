@@ -317,3 +317,30 @@ MOBILE
   color:#000;
 }
 
+/* FORCE PRODUCT GRID LAYOUT */
+.product-grid{
+  display:grid !important;
+  grid-template-columns:repeat(4,1fr);
+  gap:24px;
+  width:100%;
+  max-width:1300px;
+  margin:60px auto;
+  padding:0 5%;
+}
+
+/* Responsive */
+@media(max-width:1024px){
+  .product-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+@media(max-width:768px){
+  .product-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+@media(max-width:480px){
+  .product-grid{
+    grid-template-columns:1fr;
+  }
+}
