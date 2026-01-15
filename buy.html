@@ -121,6 +121,7 @@ button.main{width:100%;padding:15px;background:#000;color:#fff;border:none;borde
 <input type="hidden" name="_subject" value="New Order - Stubborn Thread">
 <input type="hidden" name="_template" value="table">
 <input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="Product Image" id="imgField">
 
 <input type="hidden" name="Product" id="productField">
 <input type="hidden" name="Price" id="priceField">
@@ -230,6 +231,7 @@ function update(){
   document.getElementById("total").innerText=total;
   document.getElementById("productField").value=name+" x"+qty+" | Order ID: "+orderId;
   document.getElementById("priceField").value=total;
+  document.getElementById("imgField").value = img;
   document.getElementById("nextPage").value="track.html?order="+orderId;
 }
 update();
