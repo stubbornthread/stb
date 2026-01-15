@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Buy Now | Stubborn Thread</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    font-family:Montserrat, sans-serif;
+    background:#f6f6f6;
+}
+
+.checkout{
+    max-width:500px;
+    margin:40px auto;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+}
+
+.checkout h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+input, select, textarea{
+    width:100%;
+    padding:14px;
+    border-radius:10px;
+    border:1px solid #ddd;
+    margin-bottom:15px;
+    font-size:14px;
+}
+
+.order-summary{
+    background:#f1f1f1;
+    padding:15px;
+    border-radius:12px;
+    margin-bottom:20px;
+}
+
+.order-summary span{
+    display:flex;
+    justify-content:space-between;
+    font-weight:700;
+    margin-bottom:8px;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    background:black;
+    color:white;
+    font-weight:900;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="checkout">
+<h2>Complete Your Order</h2>
+
+<div class="order-summary">
+<span><div>Product</div><div id="pname"></div></span>
+<span><div>Price</div><div>₹<span id="pprice"></span></div></span>
+</div>
+
+<form action="https://formsubmit.co/YOUR_EMAIL@gmail.com" method="POST">
+
+<input type="hidden" name="Product" id="productField">
+<input type="hidden" name="Price" id="priceField">
+
+<input type="text" name="Name" placeholder="Full Name" required>
+<input type="tel" name="Phone" placeholder="Phone Number" required>
+<input type="email" name="Email" placeholder="Email" required>
+
+<select name="Size" required>
+<option value="">Select Size</option>
+<option>S</option><option>M</option><option>L</option><option>XL</option>
+</select>
+
+<select name="Color" required>
+<option value="">Select Color</option>
+<option>Black</option><option>White</option><option>Red</option><option>Blue</option>
+</select>
+
+<textarea name="Address" placeholder="Delivery Address" required></textarea>
+
+<button type="submit">Place Order</button>
+
+</form>
+</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const name = params.get("name");
+const price = params.get("price");
+
+document.getElementById("pname").innerText = name;
+document.getElementById("pprice").innerText = price;
+
+document.getElementById("productField").value = name;
+document.getElementById("priceField").value = price;
+</script>
+
+</body>
+</html>
