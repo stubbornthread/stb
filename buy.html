@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ye lo code please es me add kar do   . <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -8,12 +8,40 @@
 
 <style>
 body{margin:0;font-family:Montserrat,sans-serif;background:#f6f6f6;}
-.buy-header{background:#000;padding:18px 6%;display:flex;justify-content:space-between;align-items:center;}
-.buy-logo{font-size:26px;font-weight:900;color:#fff;}
-.buy-nav a{color:#fff;margin-left:25px;text-decoration:none;font-size:14px;}
 
-.checkout{max-width:1100px;margin:40px auto;background:#fff;padding:30px;border-radius:20px;
-box-shadow:0 20px 40px rgba(0,0,0,.15);display:grid;grid-template-columns:1fr 1.2fr;gap:40px;}
+/* Header */
+.buy-header{
+  background:#000;
+  padding:18px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.buy-logo{
+  font-size:26px;
+  font-weight:900;
+  color:#fff;
+}
+.buy-nav a{
+  color:#fff;
+  margin-left:25px;
+  text-decoration:none;
+  font-size:14px;
+}
+
+/* Layout */
+.checkout{
+  max-width:1100px;
+  margin:40px auto;
+  background:#fff;
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 20px 40px rgba(0,0,0,.15);
+  display:grid;
+  grid-template-columns:1fr 1.2fr;
+  gap:40px;
+}
+
 .big-img{width:100%;height:520px;object-fit:cover;border-radius:20px;}
 .product-desc h2{font-size:28px;margin:10px 0;}
 .product-desc p{font-size:15px;color:#555;line-height:1.7;white-space:pre-line;}
@@ -22,25 +50,30 @@ box-shadow:0 20px 40px rgba(0,0,0,.15);display:grid;grid-template-columns:1fr 1.
 .qty-box button{width:34px;height:34px;background:#000;color:#fff;border:none;border-radius:50%;font-size:20px;}
 .qty-box span{font-size:18px;font-weight:800;}
 
-.size-box{margin:15px 0;}
-.size-box span{font-size:13px;font-weight:700;display:block;margin-bottom:6px;}
-.sizes{display:flex;flex-wrap:wrap;gap:8px;}
-.sizes button{
-border:1px solid #333;background:#000;color:#fff;padding:7px 12px;
-border-radius:8px;font-size:12px;cursor:pointer;
-}
-.sizes button.active{background:#fff;color:#000;font-weight:800;}
-.kids-sizes{display:none;}
-
 input,select,textarea{width:100%;padding:12px;border-radius:10px;border:1px solid #ddd;margin-bottom:12px;}
+
 .coupon{display:flex;gap:10px;}
 .coupon input{flex:1;}
 .coupon button{background:#000;color:#fff;border:none;padding:12px 18px;border-radius:10px;}
 
+.upload-box{border:2px dashed #aaa;padding:20px;text-align:center;border-radius:12px;margin-bottom:15px;position:relative;}
+.upload-box input{position:absolute;inset:0;opacity:0;}
+#preview{width:100%;border-radius:12px;display:none;margin-bottom:15px;}
+
 .total{font-size:20px;font-weight:900;text-align:right;margin:15px 0;}
+.orderid{text-align:center;font-weight:700;margin:10px 0;}
 button.main{width:100%;padding:15px;background:#000;color:#fff;border:none;border-radius:30px;font-weight:900;cursor:pointer;}
 
-@media(max-width:900px){.checkout{grid-template-columns:1fr;}}
+.footer-section{background:#000;color:#fff;padding:60px 5% 30px;margin-top:60px;}
+.footer-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px;max-width:1200px;margin:auto;}
+.footer-logo{font-size:28px;font-weight:900;}
+.footer-links a{color:#aaa;text-decoration:none;display:block;margin-bottom:8px;}
+.footer-links a:hover{color:#fff;}
+.footer-bottom{text-align:center;margin-top:40px;padding-top:20px;border-top:1px solid #222;color:#666;font-size:13px;}
+
+@media(max-width:900px){
+  .checkout{grid-template-columns:1fr;}
+}
 </style>
 </head>
 
@@ -48,10 +81,16 @@ button.main{width:100%;padding:15px;background:#000;color:#fff;border:none;borde
 
 <header class="buy-header">
   <div class="buy-logo">STUBBORN THREAD</div>
+  <nav class="buy-nav">
+    <a href="/">Men</a>
+    <a href="/">Women</a>
+    <a href="/">Kids</a>
+  </nav>
 </header>
 
 <div class="checkout">
 
+<!-- LEFT -->
 <div>
   <img id="pimg" class="big-img">
   <div class="product-desc">
@@ -60,6 +99,7 @@ button.main{width:100%;padding:15px;background:#000;color:#fff;border:none;borde
   </div>
 </div>
 
+<!-- RIGHT -->
 <div>
 
 <div class="qty-box">
@@ -68,31 +108,37 @@ button.main{width:100%;padding:15px;background:#000;color:#fff;border:none;borde
   <button type="button" onclick="qtyPlus()">+</button>
 </div>
 
-<!-- SIZE -->
-<div class="size-box">
-  <span>Select Size</span>
-
-  <div class="sizes adult-sizes">
-    <button>S</button><button>M</button><button>L</button><button>XL</button><button>XXL</button>
-  </div>
-
-  <div class="sizes kids-sizes">
-    <button>18 (1–2Y)</button><button>20 (2–3Y)</button><button>22 (3–4Y)</button>
-    <button>24 (4–5Y)</button><button>26 (5–6Y)</button><button>28 (6–7Y)</button>
-    <button>30 (7–8Y)</button><button>32 (8–9Y)</button><button>34 (9–10Y)</button>
-    <button>36 (10–11Y)</button><button>38 (11–12Y)</button>
-  </div>
+<div class="coupon">
+  <input id="coupon" placeholder="Coupon Code">
+  <button type="button" onclick="applyCoupon()">Apply</button>
 </div>
 
 <div class="total">Total: ₹<span id="total"></span></div>
+<div class="orderid">Order ID: <span id="orderShow"></span></div>
 
-<form action="https://formsubmit.co/printing@stubbornthread.in" method="POST">
+<form action="https://formsubmit.co/printing@stubbornthread.in" method="POST" enctype="multipart/form-data">
 <input type="hidden" name="Product" id="productField">
 <input type="hidden" name="Price" id="priceField">
-<input type="hidden" name="Size" id="sizeField">
+<input type="hidden" name="_next" id="nextPage">
+<input type="hidden" name="_captcha" value="false">
 
 <input name="Name" placeholder="Full Name" required>
 <input name="Phone" placeholder="Phone" required>
+
+<div class="upload-box">
+  <input type="file" name="Custom Design" id="designInput" accept="image/*">
+  Upload your custom design (optional)
+</div>
+<img id="preview">
+
+<select name="Size"><option>S</option><option>M</option><option>L</option><option>XL</option></select>
+<select name="Color"><option>Black</option><option>White</option><option>Red</option><option>Blue</option></select>
+
+<input name="City" placeholder="City" required>
+<input name="State" placeholder="State" required>
+<input name="Pincode" placeholder="Pincode" required>
+<input name="Landmark" placeholder="Landmark">
+<textarea name="Address" placeholder="Full Address" required></textarea>
 
 <button class="main">Place Order</button>
 </form>
@@ -100,48 +146,75 @@ button.main{width:100%;padding:15px;background:#000;color:#fff;border:none;borde
 </div>
 </div>
 
+<footer class="footer-section">
+  <div class="footer-container">
+    <div>
+      <div class="footer-logo">STUBBORN THREAD</div>
+      <p>Premium custom printed T-shirts for bold creators.</p>
+    </div>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/#shop">Shop</a>
+      <a href="/#kids">Kids</a>
+    </div>
+    <div>
+      <p>printing@stubbornthread.in</p>
+      <p>+91 96028 38028</p>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Stubborn Thread. All rights reserved.</div>
+</footer>
+
 <script>
 const params=new URLSearchParams(window.location.search);
 const name=params.get("name");
 const price=Number(params.get("price"));
 const img=params.get("img");
-const type=params.get("type"); // kids or adult
 
 document.getElementById("pname").innerText=name;
 document.getElementById("pimg").src=img;
 
-let qty=1, selectedSize="S";
+const desc = `
+🔥 STUBBORN THREAD | The Unstoppable Style 🔥
 
-if(type=="kids"){
-  document.querySelector(".adult-sizes").style.display="none";
-  document.querySelector(".kids-sizes").style.display="flex";
-  selectedSize="18 (1–2Y)";
-}else{
-  document.querySelector(".adult-sizes").style.display="flex";
-}
+100% Premium Combed Cotton  
+180+ GSM Heavy Duty Fabric  
+Bio-washed – no pilling  
+Double-stitched durability  
 
-document.querySelectorAll(".sizes button").forEach(btn=>{
-  btn.onclick=()=>{
-    document.querySelectorAll(".sizes button").forEach(b=>b.classList.remove("active"));
-    btn.classList.add("active");
-    selectedSize=btn.innerText;
-    update();
-  }
-});
+Color fast, pre-shrunk & machine washable  
 
+7-Day easy return  
+Secure packaging  
+Stubborn quality check  
+
+Wear it with sneakers and stand out.
+`;
+
+document.getElementById("pdesc").innerText=desc;
+
+let qty=1,discount=0;
 const orderId="ST"+Math.floor(100000+Math.random()*900000);
+document.getElementById("orderShow").innerText=orderId;
 
 function update(){
+  let total=(price*qty)-discount;
   document.getElementById("qty").innerText=qty;
-  document.getElementById("total").innerText=price*qty;
-  document.getElementById("productField").value=name+" | Size: "+selectedSize;
-  document.getElementById("priceField").value=price*qty;
-  document.getElementById("sizeField").value=selectedSize;
+  document.getElementById("total").innerText=total;
+  document.getElementById("productField").value=name+" x"+qty+" | Order ID: "+orderId;
+  document.getElementById("priceField").value=total;
+  document.getElementById("nextPage").value="track.html?order="+orderId;
 }
 update();
 
 function qtyPlus(){qty++;update();}
 function qtyMinus(){if(qty>1){qty--;update();}}
+function applyCoupon(){if(coupon.value=="ST20"){discount=price*qty*0.2;update();alert("20% OFF Applied");}}
+
+designInput.onchange=e=>{
+  preview.src=URL.createObjectURL(e.target.files[0]);
+  preview.style.display="block";
+};
 </script>
 
 </body>
