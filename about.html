@@ -5,176 +5,187 @@
 <title>About Us | Stubborn Thread</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="icon" href="favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
-
-<!-- FONT AWESOME (for footer icons) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="icon" href="favicon.png">
 
 <style>
-body{
-    background:#000;
-}
-
-/* HERO */
 .about-hero{
-    background:#000;
-    color:#fff;
-    padding:140px 8% 100px;
-    text-align:center;
+  background:#000;
+  color:#fff;
+  padding:140px 8% 100px;
+  text-align:center;
 }
 .about-hero h1{
-    font-size:4rem;
-    font-weight:900;
-    letter-spacing:-1px;
+  font-size:4rem;
+  font-weight:900;
 }
 .about-hero p{
-    max-width:800px;
-    margin:20px auto 0;
-    font-size:18px;
-    color:#aaa;
+  max-width:800px;
+  margin:20px auto;
+  color:#aaa;
+  font-size:18px;
 }
 
-/* ABOUT SECTION */
-.about-section{
-    background:#fff;
-    padding:100px 8%;
+.about-wrap{
+  background:#fff;
+  padding:100px 8%;
 }
 
 .about-grid{
-    max-width:1200px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:60px;
-    align-items:center;
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
 }
 
-.about-text h2{
-    font-size:36px;
-    margin-bottom:20px;
+.about-box h2{
+  font-size:36px;
+  margin-bottom:20px;
 }
-.about-text p{
-    color:#444;
-    line-height:1.8;
-    font-size:16px;
-}
-
-.about-card{
-    background:#000;
-    color:#fff;
-    padding:50px;
-    border-radius:20px;
-}
-.about-card h3{
-    font-size:28px;
-    margin-bottom:15px;
-}
-.about-card p{
-    color:#bbb;
-    line-height:1.7;
+.about-box p{
+  color:#444;
+  line-height:1.8;
 }
 
-/* VALUES */
-.values{
-    max-width:1200px;
-    margin:80px auto 0;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:30px;
+.about-dark{
+  background:#000;
+  color:#fff;
+  padding:50px;
+  border-radius:20px;
+}
+.about-dark p{
+  color:#bbb;
 }
 
-.value-box{
-    background:#f4f4f4;
-    padding:40px;
-    border-radius:20px;
-    text-align:center;
+/* TRUST */
+.trust{
+  max-width:1200px;
+  margin:80px auto 0;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:30px;
+  text-align:center;
 }
-.value-box h4{
-    margin-top:15px;
-    font-size:20px;
+.trust-box{
+  background:#f5f5f5;
+  padding:40px;
+  border-radius:20px;
 }
-.value-box p{
-    font-size:14px;
-    color:#555;
+.trust-box i{
+  font-size:32px;
+  margin-bottom:15px;
+  color:#000;
+}
+.trust-box h4{
+  margin:10px 0;
+  font-size:18px;
 }
 
-/* MOBILE */
+/* STARS */
+.stars{
+  text-align:center;
+  margin-top:60px;
+}
+.stars i{
+  color:#ffc107;
+  font-size:24px;
+}
+.stars p{
+  margin-top:10px;
+  font-weight:700;
+}
+
 @media(max-width:900px){
-    .about-grid{grid-template-columns:1fr;}
-    .values{grid-template-columns:1fr;}
-    .about-hero h1{font-size:3rem;}
+  .about-grid{grid-template-columns:1fr;}
+  .trust{grid-template-columns:1fr;}
+  .about-hero h1{font-size:3rem;}
 }
 </style>
 </head>
 
 <body>
 
-<!-- SAME HEADER AS HOME -->
+<!-- HEADER (same as index.html) -->
 <header>
     <div class="logo brand-font">Stubborn Thread</div>
-
-    <div class="menu-icon" onclick="toggleMenu()">☰</div>
-
-    <nav id="navMenu">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="#men">Men</a>
-        <a href="#women">Women</a>
-        <a href="#kids">Kids</a>
+    <nav>
+        <a href="index.html#men">Men</a>
+        <a href="index.html#women">Women</a>
+        <a href="index.html#kids">Kids</a>
     </nav>
 </header>
 
 <!-- HERO -->
 <section class="about-hero">
-    <h1>More Than A T-Shirt</h1>
-    <p>
-        We are not just selling clothing.  
-        We are building a movement of bold, fearless creators.
-    </p>
+  <h1>More Than Just A T-Shirt</h1>
+  <p>
+    Stubborn Thread is built for people who never give up.  
+    We don’t follow trends — we create identity.
+  </p>
 </section>
 
 <!-- STORY -->
-<section class="about-section">
-    <div class="about-grid">
-        <div class="about-text">
-            <h2>Our Story</h2>
-            <p>
-                Stubborn Thread was created for people who never give up.
-                We believe your outfit should reflect your mindset — strong, fearless, and confident.
-            </p>
-            <p>
-                Every piece is designed to feel premium, look powerful, and represent your identity.
-            </p>
-        </div>
-
-        <div class="about-card">
-            <h3>Our Mission</h3>
-            <p>
-                To empower the new generation with bold fashion that speaks confidence, power, and individuality.
-            </p>
-        </div>
+<section class="about-wrap">
+  <div class="about-grid">
+    <div class="about-box">
+      <h2>Our Story</h2>
+      <p>
+        Stubborn Thread was born from the idea that clothing should represent strength and confidence.
+        We design premium T-shirts for people who want to stand out and stay bold.
+      </p>
+      <p>
+        Every piece is carefully made with high-quality fabric and powerful design language.
+      </p>
     </div>
 
-    <div class="values">
-        <div class="value-box">
-            <h4>Premium Quality</h4>
-            <p>High GSM fabric, durable prints and luxury feel.</p>
-        </div>
-        <div class="value-box">
-            <h4>Bold Design</h4>
-            <p>Every tee makes a statement about who you are.</p>
-        </div>
-        <div class="value-box">
-            <h4>Made in India</h4>
-            <p>Designed and produced for modern Indian creators.</p>
-        </div>
+    <div class="about-dark">
+      <h2>Our Mission</h2>
+      <p>
+        To build a brand that empowers self-expression, courage, and individuality through fashion.
+      </p>
     </div>
+  </div>
+
+  <!-- TRUST -->
+  <div class="trust">
+    <div class="trust-box">
+      <i class="fas fa-tshirt"></i>
+      <h4>Premium Fabric</h4>
+      <p>180+ GSM bio-washed cotton</p>
+    </div>
+    <div class="trust-box">
+      <i class="fas fa-truck"></i>
+      <h4>Fast Delivery</h4>
+      <p>Pan-India shipping</p>
+    </div>
+    <div class="trust-box">
+      <i class="fas fa-sync"></i>
+      <h4>Easy Returns</h4>
+      <p>7-day hassle free</p>
+    </div>
+    <div class="trust-box">
+      <i class="fas fa-check-circle"></i>
+      <h4>Quality Check</h4>
+      <p>Each product verified</p>
+    </div>
+  </div>
+
+  <!-- STARS -->
+  <div class="stars">
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <p>Rated 5/5 by 1,000+ happy customers</p>
+  </div>
 </section>
 
-<!-- SAME FOOTER -->
+<!-- FOOTER (same as index.html) -->
 <footer class="footer-section">
     <div class="footer-container">
         <div class="footer-brand">
@@ -185,9 +196,9 @@ body{
         <div class="footer-links">
             <h4>Shop</h4>
             <ul>
-                <li><a href="#men">Men</a></li>
-                <li><a href="#women">Women</a></li>
-                <li><a href="#kids">Kids</a></li>
+                <li><a href="index.html#men">Men</a></li>
+                <li><a href="index.html#women">Women</a></li>
+                <li><a href="index.html#kids">Kids</a></li>
             </ul>
         </div>
 
@@ -200,16 +211,9 @@ body{
     </div>
 
     <div class="footer-bottom">
-        © 2026 Stubborn Thread. All rights reserved.
+        © 2026 Stubborn Thread. All Rights Reserved.
     </div>
 </footer>
-
-<!-- Hamburger JS -->
-<script>
-function toggleMenu(){
-    document.getElementById("navMenu").classList.toggle("show");
-}
-</script>
 
 </body>
 </html>
