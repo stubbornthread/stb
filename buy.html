@@ -239,24 +239,26 @@ designInput.onchange=e=>{
 };
 </script>
 <script>
-document.querySelectorAll('.product-card').forEach(card => {
+const type = new URLSearchParams(window.location.search).get("type");
+const sizeSelect = document.getElementById("sizeSelect");
 
-    const isKids = card.classList.contains("kids");
-
-    if(isKids){
-        card.querySelector('.adult-sizes').style.display = "none";
-        card.querySelector('.kids-sizes').style.display = "flex";
+if(type === "kids"){
+  [...sizeSelect.options].forEach(opt=>{
+    if(!opt.value.includes("Y")){
+      opt.style.display="none";
     }
-
-    card.querySelectorAll('.sizes button').forEach(btn=>{
-        btn.addEventListener("click",()=>{
-            card.querySelectorAll('.sizes button').forEach(b=>b.classList.remove("active"));
-            btn.classList.add("active");
-        });
-    });
-
-});
+  });
+  sizeSelect.value="18 (1–2Y)";
+}else{
+  [...sizeSelect.options].forEach(opt=>{
+    if(opt.value.includes("Y")){
+      opt.style.display="none";
+    }
+  });
+  sizeSelect.value="M";
+}
 </script>
+
 
 
 </body>
