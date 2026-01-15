@@ -276,4 +276,23 @@ MOBILE
     color:#fff;
     transform:translateY(-2px);
 }
+/* ===== BUY NOW CAPSULE BUTTON ===== */
+.buy-btn{
+  display:inline-block;
+  padding:12px 32px;
+  background:#ffffff;
+  color:#000000;
+  font-weight:800;
+  font-size:14px;
+  border-radius:40px;
+  text-decoration:none;
+  transition:.3s ease;
+  box-shadow:0 8px 20px rgba(0,0,0,.25);
+}
+
+.buy-btn:hover{
+  background:#000;
+  color:#fff;
+  transform:translateY(-3px);
+}
 
