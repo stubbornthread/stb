@@ -69,7 +69,17 @@ button.main{width:100%;padding:15px;background:#000;color:#fff;border:none;borde
 
 <select name="Size" required><option>S</option><option>M</option><option>L</option><option>XL</option></select>
 <select name="Color" required><option>Black</option><option>White</option><option>Red</option><option>Blue</option></select>
-<textarea name="Address" placeholder="Full Address" required></textarea>
+<div class="grid-2">
+  <input name="City" placeholder="City" required>
+  <input name="State" placeholder="State" required>
+</div>
+
+<div class="grid-2">
+  <input name="Pincode" placeholder="Pincode" required>
+  <input name="Landmark" placeholder="Landmark">
+</div>
+
+<textarea name="Full Address" placeholder="House no, Street, Area" required></textarea>
 
 <button class="main">Place Order</button>
 </form>
