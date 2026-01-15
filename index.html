@@ -251,6 +251,27 @@
 .social-icons a:hover{
     transform:scale(1.1);
 }
+.sale-strip{
+    width:100%;
+    background:#fff;
+    overflow:hidden;
+    border-bottom:1px solid #eee;
+}
+
+.sale-text{
+    display:inline-block;
+    white-space:nowrap;
+    font-weight:900;
+    font-size:14px;
+    padding:10px 0;
+    color:#000;
+    animation: scrollSale 15s linear infinite;
+}
+
+@keyframes scrollSale{
+    from{ transform: translateX(100%); }
+    to{ transform: translateX(-100%); }
+}
 
     </style>
 </head>
@@ -269,7 +290,12 @@
         <a href="#kids">Kids</a>
     </nav>
 </header>
-    
+    <div class="sale-strip">
+  <div class="sale-text">
+    🔥 50% OFF LIVE SALE! 🔥 50% OFF LIVE SALE! 🔥 50% OFF LIVE SALE! 🔥 50% OFF LIVE SALE!
+  </div>
+</div>
+
     <section class="hero">
     <h1 class="brand-font">Stubborn Thread</h1>
         <p>Premium quality threads for those who never settle.</p>
