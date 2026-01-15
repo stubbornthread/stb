@@ -107,32 +107,6 @@ button.main{width:100%;padding:15px;background:#000;color:#fff;border:none;borde
   <span id="qty">1</span>
   <button type="button" onclick="qtyPlus()">+</button>
 </div>
-<div class="size-box">
-    <span>Select Size</span>
-
-    <!-- ADULT SIZES -->
-    <div class="sizes adult-sizes">
-        <button>S</button>
-        <button>M</button>
-        <button>L</button>
-        <button>XL</button>
-        <button>XXL</button>
-    </div>
-
-    <!-- KIDS SIZES -->
-    <div class="sizes kids-sizes">
-        <button>18 (1–2Y)</button>
-        <button>20 (2–3Y)</button>
-        <button>22 (3–4Y)</button>
-        <button>24 (4–5Y)</button>
-        <button>26 (5–6Y)</button>
-        <button>28 (6–7Y)</button>
-        <button>30 (7–8Y)</button>
-        <button>32 (8–9Y)</button>
-        <button>34 (9–10Y)</button>
-        <button>36 (10–11Y)</button>
-        <button>38 (11–12Y)</button>
-    </div>
 </div>
 <div class="coupon">
   <input id="coupon" placeholder="Coupon Code">
@@ -157,8 +131,33 @@ button.main{width:100%;padding:15px;background:#000;color:#fff;border:none;borde
 </div>
 <img id="preview">
 
-<select name="Size"><option>S</option><option>M</option><option>L</option><option>XL</option></select>
-<select name="Color"><option>Black</option><option>White</option><option>Red</option><option>Blue</option></select>
+<select name="Size" id="sizeSelect" required>
+
+  <!-- Adult Sizes -->
+  <optgroup label="Adult Sizes">
+    <option value="S">S</option>
+    <option value="M">M</option>
+    <option value="L">L</option>
+    <option value="XL">XL</option>
+    <option value="XXL">XXL</option>
+  </optgroup>
+
+  <!-- Kids Sizes (India) -->
+  <optgroup label="Kids Sizes">
+    <option value="18 (1–2Y)">18 (1–2Y)</option>
+    <option value="20 (2–3Y)">20 (2–3Y)</option>
+    <option value="22 (3–4Y)">22 (3–4Y)</option>
+    <option value="24 (4–5Y)">24 (4–5Y)</option>
+    <option value="26 (5–6Y)">26 (5–6Y)</option>
+    <option value="28 (6–7Y)">28 (6–7Y)</option>
+    <option value="30 (7–8Y)">30 (7–8Y)</option>
+    <option value="32 (8–9Y)">32 (8–9Y)</option>
+    <option value="34 (9–10Y)">34 (9–10Y)</option>
+    <option value="36 (10–11Y)">36 (10–11Y)</option>
+    <option value="38 (11–12Y)">38 (11–12Y)</option>
+  </optgroup>
+</select>
+  <select name="Color"><option>Black</option><option>White</option><option>Red</option><option>Blue</option></select>
 
 <input name="City" placeholder="City" required>
 <input name="State" placeholder="State" required>
