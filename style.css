@@ -487,3 +487,46 @@ GLOBAL FOOTER (All Pages)
     color:#555;
     font-size:13px;
 }
+.size-box{
+    margin-top:14px;
+}
+
+.size-box span{
+    display:block;
+    font-size:12px;
+    color:#aaa;
+    margin-bottom:6px;
+}
+
+.sizes{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+.sizes button{
+    border:1px solid #333;
+    background:#000;
+    color:#fff;
+    padding:6px 12px;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:12px;
+    transition:.25s;
+}
+
+.sizes button:hover{
+    background:#fff;
+    color:#000;
+}
+
+.sizes button.active{
+    background:#fff;
+    color:#000;
+    font-weight:700;
+}
+
+/* hide kids sizes by default */
+.kids-sizes{
+    display:none;
+}
