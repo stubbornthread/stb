@@ -598,3 +598,59 @@ GLOBAL FOOTER (All Pages)
   .hero-img{height:55%;}
   .hero-text h1{font-size:36px;}
 }
+/* ===== SHOP BY CATEGORY ===== */
+
+.category-circle-section{
+  text-align:center;
+  padding:70px 5% 40px;
+}
+
+.category-top{
+  font-size:13px;
+  letter-spacing:2px;
+  color:#999;
+  margin-bottom:6px;
+}
+
+.category-title{
+  font-size:36px;
+  font-weight:900;
+  margin-bottom:40px;
+}
+
+.circle-row{
+  display:flex;
+  gap:40px;
+  justify-content:center;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+}
+
+.circle-row::-webkit-scrollbar{
+  display:none;
+}
+
+.circle-card{
+  flex-shrink:0;
+  scroll-snap-align:center;
+  text-align:center;
+  text-decoration:none;
+  color:#000;
+}
+
+.circle-card img{
+  width:200px;
+  height:200px;
+  border-radius:50%;
+  object-fit:cover;
+  transition:.4s;
+}
+
+.circle-card img:hover{
+  transform:scale(1.06);
+}
+
+.circle-card p{
+  margin-top:15px;
+  font-weight:600;
+}
