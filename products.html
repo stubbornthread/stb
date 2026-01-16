@@ -204,12 +204,12 @@ const titles=["Cute Panda Tee","Little Hero Tee","Space Kid Tee","Magic Unicorn 
 const grid=document.getElementById("grid");
 
 images.forEach(img=>{
-  const price=Math.floor(Math.random()*300)+299;
-  const title=titles[Math.floor(Math.random()*titles.length)]+" – Stubborn Thread";
+  const price = Math.floor(Math.random() * 300) + 299;
+  const title = titles[Math.floor(Math.random() * titles.length)] + " – Stubborn Thread";
 
-  grid.innerHTML+=`
-<img src="images/${img}" loading="lazy">
-      <img src="images/${img}">
+  grid.innerHTML += `
+    <div class="product-card">
+      <img src="images/${img}" loading="lazy">
       <h3>${title}</h3>
       <p>₹${price}</p>
       <a class="buy-btn" href="buy.html?name=${encodeURIComponent(title)}&price=${price}&img=images/${img}">
@@ -218,6 +218,7 @@ images.forEach(img=>{
     </div>
   `;
 });
+;
 </script>
 
 </body>
