@@ -530,3 +530,71 @@ GLOBAL FOOTER (All Pages)
 .kids-sizes{
     display:none;
 }
+.hero-slider{
+  position:relative;
+  height:85vh;
+  background:#f6efe4;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+}
+
+.slide{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 8%;
+  opacity:0;
+  transition:.6s;
+}
+
+.slide.active{opacity:1;}
+
+.hero-text small{
+  letter-spacing:2px;
+  font-weight:600;
+}
+
+.hero-text h1{
+  font-size:56px;
+  line-height:1.1;
+  margin:15px 0;
+}
+
+.hero-btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:14px 36px;
+  background:#000;
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
+}
+
+.hero-img{
+  height:90%;
+}
+
+.nav{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:#fff;
+  border:none;
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  font-size:22px;
+  cursor:pointer;
+}
+
+.prev{left:30px;}
+.next{right:30px;}
+
+@media(max-width:768px){
+  .slide{flex-direction:column;text-align:center;}
+  .hero-img{height:55%;}
+  .hero-text h1{font-size:36px;}
+}
