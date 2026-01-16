@@ -344,11 +344,32 @@
   </div>
 </div>
 
-    <section class="hero">
-    <h1 class="brand-font">Stubborn Thread</h1>
-        <p>Premium quality threads for those who never settle.</p>
-        <a href="#shop" class="btn">Shop Collection</a>
-    </section>
+    <section class="hero-slider">
+
+  <button class="nav prev" onclick="prevSlide()">‹</button>
+
+  <div class="slide active">
+    <div class="hero-text">
+      <small>COMFY AND COOL</small>
+      <h1>Stay stylish in<br>Premium street<br>T-shirts</h1>
+      <a href="products.html" class="hero-btn">Shop Now</a>
+    </div>
+    <img src="images/hero1.png" class="hero-img">
+  </div>
+
+  <div class="slide">
+    <div class="hero-text">
+      <small>NEW COLLECTION</small>
+      <h1>Bold Looks<br>For Everyday</h1>
+      <a href="products.html" class="hero-btn">Shop Now</a>
+    </div>
+    <img src="images/hero2.png" class="hero-img">
+  </div>
+
+  <button class="nav next" onclick="nextSlide()">›</button>
+
+</section>
+
 
    <div class="container" id="shop">
     <div class="section-header">
@@ -819,6 +840,25 @@ newArrivalsImages.forEach(img => {
   a.appendChild(image);
   newArrivalsRow.appendChild(a);
 });
+</script>
+<script>
+let slides=document.querySelectorAll(".slide");
+let index=0;
+
+function showSlide(i){
+  slides.forEach(s=>s.classList.remove("active"));
+  slides[i].classList.add("active");
+}
+
+function nextSlide(){
+  index=(index+1)%slides.length;
+  showSlide(index);
+}
+
+function prevSlide(){
+  index=(index-1+slides.length)%slides.length;
+  showSlide(index);
+}
 </script>
 
 
