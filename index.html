@@ -445,7 +445,11 @@
 </div>
 
     <section class="hero-slider">
-        <section class="category-circle-section">
+        </section> <!-- hero-slider end -->
+
+<section class="category-circle-section">
+  ...
+</section>
 
   <p class="category-top">TOP CATEGORIES</p>
   <h2 class="category-title">Shop By Category</h2>
@@ -506,16 +510,15 @@
         <h2>The Essentials</h2>
     </div>
 <!-- BOYS -->
-<section class="category-section">
-  <h2> Boys Collection <a href="products.html">View All</a></h2>
-  <div class="category-row" id="boysRow"></div>
+  <section class="category-section collection-slide active">
+    <h2> Boys Collection <a href="products.html">View All</a></h2>
+    <div class="category-row" id="boysRow"></div>
+  </section>
 
-</section>
-
-<!-- GIRLS -->
-<section class="category-section">
-  <h2> Girls Collection <a href="products.html">View All</a></h2>
-  <div class="category-row">
+  <!-- GIRLS -->
+  <section class="category-section collection-slide">
+    <h2> Girls Collection <a href="products.html">View All</a></h2>
+    <div class="category-row">
 
   <a href="buy.html?name=Girls%20Tshirt&price=399&img=images/1aa.jpg">
     <img src="images/1aa.jpg" loading="lazy">
@@ -550,12 +553,10 @@
 </section>
 
 <!-- NEW ARRIVALS -->
-<section class="category-section">
-  <h2> New Arrivals <a href="products.html">View All</a></h2>
-<div class="category-row" id="newArrivalsRow"></div>
-
-</section>
-
+  <section class="category-section collection-slide">
+    <h2> New Arrivals <a href="products.html">View All</a></h2>
+    <div class="category-row" id="newArrivalsRow"></div>
+  </section>
 
 
 </div>
@@ -1047,6 +1048,26 @@ document.addEventListener("DOMContentLoaded", function () {
   startAutoSlide();
 });
 </script>
+    <script>
+document.addEventListener("DOMContentLoaded", function(){
+
+  const collections = document.querySelectorAll(".collection-slide");
+  let current = 0;
+
+  function showCollection(i){
+    collections.forEach((sec, index)=>{
+      sec.classList.toggle("active", index === i);
+    });
+  }
+
+  setInterval(()=>{
+    current = (current + 1) % collections.length;
+    showCollection(current);
+  }, 2000); // 2 seconds
+
+});
+</script>
+
 
 
 
