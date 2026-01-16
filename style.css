@@ -654,3 +654,10 @@ GLOBAL FOOTER (All Pages)
   margin-top:15px;
   font-weight:600;
 }
+.collection-slide{
+  display:none;
+}
+
+.collection-slide.active{
+  display:block;
+}
