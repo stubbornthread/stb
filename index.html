@@ -444,8 +444,284 @@
   </div>
 </div>
 
-    <section class="hero-slider">
-        </section> <!-- hero-slider end -->
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Stubborn Thread | Official Store</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif}
+body{background:#fff;color:#000}
+
+/* HEADER */
+header{
+  background:#000;
+  color:#fff;
+  padding:16px 5%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+header a{color:#fff;text-decoration:none;font-weight:900}
+nav a{margin-left:20px;font-size:14px}
+
+/* HERO */
+.hero-slider{
+  position:relative;
+  height:70vh;
+  background:#f6efe4;
+  overflow:hidden;
+}
+.slide{
+  position:absolute;
+  inset:0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 7%;
+  opacity:0;
+  transition:.6s;
+}
+.slide.active{opacity:1}
+.hero-text h1{font-size:52px;line-height:1.1}
+.hero-btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:14px 36px;
+  background:#000;
+  color:#fff;
+  text-decoration:none;
+}
+.hero-img{max-width:45%;height:90%;object-fit:contain}
+
+/* arrows */
+.nav{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:44px;height:44px;
+  border:none;
+  border-radius:50%;
+  background:#fff;
+  font-size:22px;
+  cursor:pointer;
+}
+.prev{left:20px}
+.next{right:20px}
+
+/* CATEGORY CIRCLE */
+.category-circle{
+  text-align:center;
+  padding:80px 5%;
+}
+.circle-row{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  flex-wrap:wrap;
+}
+.circle-card img{
+  width:160px;
+  height:160px;
+  border-radius:50%;
+  object-fit:cover;
+}
+.circle-card p{margin-top:12px;font-weight:600}
+
+/* COLLECTION */
+.collection{
+  padding:40px 5%;
+}
+.collection h2{
+  display:flex;
+  justify-content:space-between;
+  font-size:22px;
+}
+.row{
+  display:flex;
+  gap:20px;
+  overflow-x:auto;
+  margin-top:20px;
+}
+.row img{
+  width:180px;
+  height:240px;
+  border-radius:16px;
+  object-fit:cover;
+}
+
+/* FOOTER */
+footer{
+  background:#000;
+  color:#fff;
+  padding:40px 5%;
+  margin-top:60px;
+  text-align:center;
+}
+</style>
+</head>
+
+    /* ===== SHOP BY CATEGORY FINAL FIX ===== */
+
+.category-circle-section{
+  padding:80px 5% 60px;
+  text-align:center;
+  background:#fff; /* hero se alag clean look */
+}
+
+.category-top{
+  font-size:13px;
+  letter-spacing:2px;
+  color:#888;
+  margin-bottom:8px;
+}
+
+.category-title{
+  font-size:36px;
+  font-weight:900;
+  margin-bottom:40px;
+}
+
+.circle-row{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  flex-wrap:wrap;
+}
+
+.circle-card{
+  text-decoration:none;
+  color:#000;
+}
+
+.circle-card img{
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  object-fit:cover;
+  background:#f2f2f2;
+}
+
+.circle-card p{
+  margin-top:14px;
+  font-weight:600;
+}
+<body>
+
+<header>
+  <a href="#">STUBBORN THREAD</a>
+  <nav>
+    <a href="#">Boy</a>
+    <a href="#">Girl</a>
+    <a href="#">New Arrivals</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero-slider">
+
+<button class="nav prev" onclick="prevSlide()">‹</button>
+
+<div class="slide active">
+  <div class="hero-text">
+    <h1>Street Soul<br>Premium Feel</h1>
+    <a href="#" class="hero-btn">Shop Now</a>
+  </div>
+  <img src="images/hero1.png" class="hero-img">
+</div>
+
+<div class="slide">
+  <div class="hero-text">
+    <h1>Bold Looks<br>Everyday</h1>
+    <a href="#" class="hero-btn">Shop Now</a>
+  </div>
+  <img src="images/hero2.png" class="hero-img">
+</div>
+
+<button class="nav next" onclick="nextSlide()">›</button>
+</section>
+
+<!-- CATEGORY -->
+<section class="category-circle">
+  <h2>Shop By Category</h2>
+  <div class="circle-row">
+    <div class="circle-card"><img src="images/category1.jpg"><p>T-Shirts</p></div>
+    <div class="circle-card"><img src="images/category2.jpg"><p>Kids</p></div>
+    <div class="circle-card"><img src="images/category3.jpg"><p>New</p></div>
+  </div>
+</section>
+
+<!-- BOYS -->
+<section class="collection">
+  <h2>Boys Collection <a href="#">View All</a></h2>
+  <div class="row" id="boysRow"></div>
+</section>
+
+<!-- GIRLS -->
+<section class="collection">
+  <h2>Girls Collection <a href="#">View All</a></h2>
+  <div class="row">
+    <img src="images/1aa.jpg">
+    <img src="images/2aa.jpg">
+    <img src="images/3aa.jpg">
+    <img src="images/4aa.jpg">
+  </div>
+</section>
+
+<!-- NEW -->
+<section class="collection">
+  <h2>New Arrivals <a href="#">View All</a></h2>
+  <div class="row" id="newRow"></div>
+</section>
+
+<footer>
+  © 2026 Stubborn Thread
+</footer>
+
+<script>
+/* HERO SLIDER */
+let slides=document.querySelectorAll('.slide');
+let index=0;
+function show(i){
+  slides.forEach((s,n)=>s.classList.toggle('active',n===i));
+}
+function nextSlide(){index=(index+1)%slides.length;show(index)}
+function prevSlide(){index=(index-1+slides.length)%slides.length;show(index)}
+setInterval(nextSlide,4000);
+
+/* BOYS */
+const boys=[
+"1.jpeg","2.jpeg","3.jpeg","4.jpeg"
+];
+const boysRow=document.getElementById("boysRow");
+boys.forEach(i=>{
+  let img=document.createElement("img");
+  img.src="images/"+i;
+  boysRow.appendChild(img);
+});
+
+/* NEW */
+const news=["1l (Medium).png","1q (Medium).png","1qq (Medium).png"];
+const newRow=document.getElementById("newRow");
+news.forEach(i=>{
+  let img=document.createElement("img");
+  img.src="images/"+i;
+  newRow.appendChild(img);
+});
+</script>
+
+</body>
+</html>
+
 
 <section class="category-circle-section">
   ...
@@ -973,151 +1249,44 @@ newArrivalsImages.forEach(img => {
 });
 </script>
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
 
   const slides = document.querySelectorAll(".slide");
   let index = 0;
+  let timer;
 
   function showSlide(i){
-    slides.forEach((slide, n) => {
-      slide.classList.toggle("active", n === i);
-    });
+    slides.forEach((s,n)=>s.classList.toggle("active", n===i));
   }
 
   function nextSlide(){
     index = (index + 1) % slides.length;
     showSlide(index);
+    reset();
   }
 
   function prevSlide(){
     index = (index - 1 + slides.length) % slides.length;
     showSlide(index);
+    reset();
   }
 
-  // expose to buttons
+  function start(){
+    timer = setInterval(nextSlide, 4000);
+  }
+
+  function reset(){
+    clearInterval(timer);
+    start();
+  }
+
   window.nextSlide = nextSlide;
   window.prevSlide = prevSlide;
 
-  // initial load
   showSlide(index);
+  start();
 });
 </script>
-    <script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  const slides = document.querySelectorAll(".slide");
-  let index = 0;
-  let autoSlideInterval;
-
-  function showSlide(i){
-    slides.forEach((slide, n) => {
-      slide.classList.toggle("active", n === i);
-    });
-  }
-
-  function nextSlide(){
-    index = (index + 1) % slides.length;
-    showSlide(index);
-    resetAutoSlide();
-  }
-
-  function prevSlide(){
-    index = (index - 1 + slides.length) % slides.length;
-    showSlide(index);
-    resetAutoSlide();
-  }
-
-  function startAutoSlide(){
-    autoSlideInterval = setInterval(() => {
-      index = (index + 1) % slides.length;
-      showSlide(index);
-    }, 4000); // 🔥 4 seconds
-  }
-
-  function resetAutoSlide(){
-    clearInterval(autoSlideInterval);
-    startAutoSlide();
-  }
-
-  // expose buttons
-  window.nextSlide = nextSlide;
-  window.prevSlide = prevSlide;
-
-  // initial load
-  showSlide(index);
-  startAutoSlide();
-});
-</script>
-    <script>
-document.addEventListener("DOMContentLoaded", function(){
-
-  const collections = document.querySelectorAll(".collection-slide");
-  let current = 0;
-
-  function showCollection(i){
-    collections.forEach((sec, index)=>{
-      sec.classList.toggle("active", index === i);
-    });
-  }
-
-  setInterval(()=>{
-    current = (current + 1) % collections.length;
-    showCollection(current);
-  }, 2000); // 2 seconds
-
-});
-</script>
-    /* ===== SHOP BY CATEGORY FINAL FIX ===== */
-
-.category-circle-section{
-  padding:80px 5% 60px;
-  text-align:center;
-  background:#fff; /* hero se alag clean look */
-}
-
-.category-top{
-  font-size:13px;
-  letter-spacing:2px;
-  color:#888;
-  margin-bottom:8px;
-}
-
-.category-title{
-  font-size:36px;
-  font-weight:900;
-  margin-bottom:40px;
-}
-
-.circle-row{
-  display:flex;
-  justify-content:center;
-  gap:40px;
-  flex-wrap:wrap;
-}
-
-.circle-card{
-  text-decoration:none;
-  color:#000;
-}
-
-.circle-card img{
-  width:180px;
-  height:180px;
-  border-radius:50%;
-  object-fit:cover;
-  background:#f2f2f2;
-}
-
-.circle-card p{
-  margin-top:14px;
-  font-weight:600;
-}
-
-
-
-
-
-
 
 </body>
 </html>
