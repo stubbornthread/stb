@@ -15,7 +15,12 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif}
-body{background:#fff;color:#000}
+body{
+  background:#fff;
+  color:#000;
+  margin:0;
+  padding:0;
+}
 
 /* HEADER */
 header{
@@ -28,12 +33,23 @@ header a{color:#fff;text-decoration:none;font-weight:900}
 nav a{margin-left:20px;font-size:14px}
 
 /* SALE STRIP */
-.sale-strip{background:#fff;border-bottom:1px solid #eee;overflow:hidden}
-.sale-text{
-  display:inline-block;white-space:nowrap;
-  font-size:14px;font-weight:900;
-  animation:scrollSale 30s linear infinite
+.sale-strip{
+  background:#fff;
+  border-bottom:1px solid #eee;
+  overflow:hidden;
+  margin:0;
+  padding:0;
 }
+.sale-text{
+  display:inline-block;
+  white-space:nowrap;
+  font-size:14px;
+  font-weight:900;
+  padding:8px 0;   /* controlled height */
+  margin:0;
+  animation:scrollSale 30s linear infinite;
+}
+
 @keyframes scrollSale{
   from{transform:translateX(100%)}
   to{transform:translateX(-100%)}
@@ -41,9 +57,14 @@ nav a{margin-left:20px;font-size:14px}
 
 /* HERO SLIDER */
 .hero-slider{
-  position:relative;height:70vh;
-  background:#f6efe4;overflow:hidden
+  position:relative;
+  height:70vh;
+  background:#f6efe4;
+  overflow:hidden;
+  margin:0;
+  padding:0;
 }
+
 .slide{
   position:absolute;inset:0;
   display:flex;align-items:center;justify-content:space-between;
