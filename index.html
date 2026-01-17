@@ -304,16 +304,31 @@ nav a{margin-left:20px;font-size:14px}
   border-radius:12px;
 }
 
-.rating{
+/* IMAGE WRAP */
+.img-wrap{
+  position:relative;
+}
+
+/* RATING OVER IMAGE - BOTTOM LEFT */
+.rating-overlay{
   position:absolute;
-  top:10px;
+  bottom:10px;
   left:10px;
   background:#fff;
   padding:4px 8px;
-  border-radius:20px;
+  border-radius:14px;
   font-size:13px;
   font-weight:700;
+  display:flex;
+  align-items:center;
+  gap:4px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.2);
 }
+
+.rating-overlay .star{
+  color:#f5b301;
+}
+
 
 .brand{
   margin-top:10px;
@@ -754,21 +769,27 @@ newArrivalsImages.forEach(img=>{
   const off = Math.round(((mrp-price)/mrp)*100);
 
   row.innerHTML += `
-    <a class="product-card"
-       href="buy.html?name=${encodeURIComponent(title)}&price=${price}&img=images/${encodeURIComponent(img)}">
+  <a class="product-card"
+     href="buy.html?name=${encodeURIComponent(title)}&price=${price}&img=images/${encodeURIComponent(img)}">
 
-      <div class="rating">⭐ ${rating}</div>
+    <div class="img-wrap">
       <img src="images/${img}" loading="lazy">
-      <div class="brand">Stubborn Thread®</div>
-      <div class="product-name">${title}</div>
-      <div class="price-box">
-        <span class="price">₹${price}</span>
-        <span class="mrp">₹${mrp}</span>
-        <span class="off">${off}% OFF</span>
+      <div class="rating-overlay">
+        <span class="star">⭐</span> ${rating}
       </div>
-    </a>
-  `;
-});
+    </div>
+
+    <div class="brand">Stubborn Thread®</div>
+
+    <div class="product-name">${title}</div>
+
+    <div class="price-box">
+      <span class="price">₹${price}</span>
+      <span class="mrp">₹${mrp}</span>
+      <span class="off">${off}% OFF</span>
+    </div>
+  </a>
+`;
 
 /* AUTO SLIDE */
 let scrollX = 0;
