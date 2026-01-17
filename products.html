@@ -440,15 +440,19 @@ const images = [
 ];
 
 
-const titles=["Cute Panda Tee","Little Hero Tee","Space Kid Tee","Magic Unicorn Tee","Cool Dino Tee","Tiny Champ Tee"];
+const titles = [
+  "Cute Panda Tee",
+  "Little Hero Tee",
+  "Space Kid Tee",
+  "Magic Unicorn Tee",
+  "Cool Dino Tee",
+  "Tiny Champ Tee"
+];
 
-const grid=document.getElementById("grid");
+const grid = document.getElementById("grid");
 
-images.forEach(img=>{
-  const price = Math.floor(Math.random() * 300) + 299;
-  const title = titles[Math.floor(Math.random() * titles.length)] + " – Stubborn Thread";
+images.forEach(img => {
 
-  images.forEach(img=>{
   const mrp = Math.floor(Math.random() * 900) + 999;
   const price = Math.floor(Math.random() * 400) + 399;
   const rating = (Math.random() * (4.8 - 4.1) + 4.1).toFixed(1);
@@ -457,7 +461,7 @@ images.forEach(img=>{
 
   grid.innerHTML += `
     <a class="product-card"
-       href="buy.html?name=${encodeURIComponent(title)}&price=${price}&img=images/${encodeURIComponent(img)}">
+      href="buy.html?name=${encodeURIComponent(title)}&price=${price}&img=images/${encodeURIComponent(img)}">
 
       <div class="img-wrap">
         <img src="images/${img}" loading="lazy">
@@ -477,8 +481,6 @@ images.forEach(img=>{
     </a>
   `;
 });
-
 </script>
-
 </body>
 </html>
