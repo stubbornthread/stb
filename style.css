@@ -661,3 +661,18 @@ GLOBAL FOOTER (All Pages)
 .collection-slide.active{
   display:block;
 }
+#newArrivalsRow{
+  display:flex;
+  gap:20px;
+  overflow:hidden;
+}
+
+.product-card{
+  min-width:220px;
+  background:#fff;
+  padding:12px;
+  border-radius:16px;
+  color:#000;
+  text-decoration:none;
+}
+
