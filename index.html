@@ -1,216 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Brand",
-  "name": "Stubborn Thread",
-  "url": "https://stubbornthread.in",
-  "logo": "https://stubbornthread.in/favicon.png",
-  "sameAs": [
-    "https://www.instagram.com/",
-    "https://www.facebook.com/"
-  ]
-}
-</script>
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stubborn Thread | Official Store</title>
-    <meta name="description" content="Stubborn Thread – Premium custom printed T-shirts for kids, men and women in India. 180+ GSM cotton, fast delivery & easy returns.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="keywords" content="stubborn thread, custom tshirt, kids tshirt, printed tshirt, premium cotton tshirt india">
-
+<title>Stubborn Thread | Official Store</title>
+<meta name="description" content="Stubborn Thread – Premium custom printed T-shirts for kids, men and women in India.">
+<meta name="keywords" content="stubborn thread, tshirt, kids tshirt, printed tshirt">
 <meta name="author" content="Stubborn Thread">
 
-<meta property="og:title" content="Stubborn Thread – Premium T-Shirts">
-<meta property="og:description" content="Shop premium custom printed T-shirts for kids & adults. Fast shipping across India.">
-<meta property="og:image" content="https://stubbornthread.in/favicon.png">
-<meta property="og:url" content="https://stubbornthread.in">
+<link rel="icon" href="favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-<meta name="twitter:card" content="summary_large_image">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif}
+body{background:#fff;color:#000}
 
-    <link rel="icon" href="favicon.png">
-       <link rel="apple-touch-icon" href="favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        /* ===== HERO SLIDER FIX ===== */
+/* HEADER */
+header{
+  background:#000;color:#fff;
+  padding:16px 5%;
+  display:flex;justify-content:space-between;align-items:center;
+  position:sticky;top:0;z-index:1000
+}
+header a{color:#fff;text-decoration:none;font-weight:900}
+nav a{margin-left:20px;font-size:14px}
+
+/* SALE STRIP */
+.sale-strip{background:#fff;border-bottom:1px solid #eee;overflow:hidden}
+.sale-text{
+  display:inline-block;white-space:nowrap;
+  font-size:14px;font-weight:900;
+  animation:scrollSale 30s linear infinite
+}
+@keyframes scrollSale{
+  from{transform:translateX(100%)}
+  to{transform:translateX(-100%)}
+}
+
+/* HERO SLIDER */
 .hero-slider{
-  position:relative;
-  height:65vh;
-  background:#f6efe4;
-  overflow:hidden;
-  display:flex;
-  align-items:center;
+  position:relative;height:70vh;
+  background:#f6efe4;overflow:hidden
 }
-
 .slide{
-  position:absolute;
-  inset:0;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 7%;
-  opacity:0;
-  visibility:hidden;
-  transition:opacity 0.6s ease;
+  position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 7%;opacity:0;transition:.6s
 }
-
-.slide.active{
-  opacity:1;
-  visibility:visible;
-  z-index:2;
-}
-
-
-.hero-text{
-  max-width:520px;
-}
-
-.hero-text small{
-  letter-spacing:2px;
-  font-weight:700;
-  font-size:13px;
-}
-
-.hero-text h1{
-  font-size:56px;
-  line-height:1.1;
-  margin:16px 0;
-}
-
+.slide.active{opacity:1;z-index:2}
+.hero-text h1{font-size:52px;line-height:1.1}
 .hero-btn{
-  display:inline-block;
-  margin-top:22px;
-  padding:14px 36px;
-  background:#000;
-  color:#fff;
-  text-decoration:none;
-  font-weight:800;
+  display:inline-block;margin-top:20px;
+  padding:14px 36px;background:#000;color:#fff;text-decoration:none
 }
+.hero-img{max-width:45%;height:90%;object-fit:contain}
 
-/* 🔥 IMAGE CONTROL */
-.hero-img{
-  height:90%;
-  max-width:45%;
-  object-fit:contain;
-}
-
-/* Arrows */
+/* ARROWS */
 .nav{
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  background:#fff;
-  border:none;
-  width:46px;
-  height:46px;
-  border-radius:50%;
-  font-size:22px;
-  cursor:pointer;
-  z-index:5;
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:44px;height:44px;border:none;border-radius:50%;
+  background:#fff;font-size:22px;cursor:pointer
 }
+.prev{left:20px}
+.next{right:20px}
 
-.prev{left:30px;}
-.next{right:30px;}
-
-/* Mobile Fix */
-@media(max-width:768px){
-  .slide{
-    flex-direction:column;
-    justify-content:center;
-    text-align:center;
-    padding:40px 6%;
-  }
-
-  .hero-img{
-    max-width:80%;
-    height:auto;
-    margin-top:20px;
-  }
-
-  .hero-text h1{
-    font-size:34px;
-  }
+/* CATEGORY CIRCLE */
+.category-circle{
+  padding:80px 5%;text-align:center
 }
+.circle-row{
+  display:flex;justify-content:center;gap:40px;flex-wrap:wrap
+}
+.circle-card{text-decoration:none;color:#000}
+.circle-card img{
+  width:180px;height:180px;border-radius:50%;
+  object-fit:cover;background:#f2f2f2
+}
+.circle-card p{margin-top:14px;font-weight:600}
 
-        :root {
-            --black: #000000;
-            --white: #ffffff;
-            --gray: #f4f4f4;
-            --whatsapp: #25D366;
-        }
+/* COLLECTION SLIDER */
+.collection{
+  padding:40px 5%
+}
+.collection h2{
+  display:flex;justify-content:space-between;font-size:22px
+}
+.category-row{
+  display:flex;gap:20px;overflow-x:auto;margin-top:20px
+}
+.category-row img{
+  width:180px;height:240px;border-radius:16px;object-fit:cover
+}
+.category-row::-webkit-scrollbar{display:none}
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: var(--white); color: var(--black); line-height: 1.6; }
-
-        /* Header */
-        header {
-            background: var(--black);
-            color: var(--white);
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        .logo { font-size: 1.5rem; font-weight: 900; letter-spacing: -1px; text-transform: uppercase; }
-        nav a { color: var(--white); text-decoration: none; margin-left: 20px; font-weight: 500; font-size: 0.9rem; }
-
-        /* Hero Section */
-        .hero {
-            height: 80vh;
-            background: var(--black);
-            color: var(--white);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-        }
-        .hero h1 { font-size: 4rem; text-transform: uppercase; margin-bottom: 1rem; }
-        .hero p { font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.8; }
-        .btn {
-            background: var(--white);
-            color: var(--black);
-            padding: 15px 40px;
-            text-decoration: none;
-            font-weight: bold;
-            text-transform: uppercase;
-            transition: 0.3s;
-        }
-        .btn:hover { background: var(--gray); }
-
-        /* Product Section */
-        .container { padding: 80px 5%; }
-        .section-header { text-align: center; margin-bottom: 50px; }
-        .section-header h2 { font-size: 2.5rem; text-transform: uppercase; border-bottom: 4px solid var(--black); display: inline-block; }
-
-        /* Floating WhatsApp */
-        .whatsapp-btn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: var(--whatsapp);
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            z-index: 1000;
-        }
-
-        /* Footer Styling */
+ /* Footer Styling */
         .footer-section {
             background: #000;
             color: #fff;
@@ -305,43 +190,7 @@
             background: #fff;
             color: #000;
         }
-        .buy-now-btn{
-    display:inline-block;
-    margin-top:12px;
-    padding:8px 18px;
-    font-size:13px;
-    font-weight:700;
-    background:#000;
-    color:#fff;
-    border-radius:20px;
-    text-decoration:none;
-    transition:.3s;
-}
-
-.buy-now-btn i{
-    font-style:normal;
-    margin-left:6px;
-}
-
-.buy-now-btn:hover{
-    background:#222;
-    transform:scale(1.05);
-}
-.social-icons a{
-    background:#fff;
-    width:40px;
-    height:40px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:50%;
-    box-shadow:0 4px 10px rgba(0,0,0,0.1);
-    transition:.3s;
-    text-decoration:none;
-
-}
-
-/* Platform colors */
+        /* Platform colors */
 .social-icons a .fa-instagram{color:#E4405F;}
 .social-icons a .fa-facebook-f{color:#1877F2;}
 .social-icons a .fa-youtube{color:#FF0000;}
@@ -379,389 +228,86 @@
 .category-section{
   margin:60px 0;
 }
+        .buy-now-btn{
+    display:inline-block;
+    margin-top:12px;
+    padding:8px 18px;
+    font-size:13px;
+    font-weight:700;
+    background:#000;
+    color:#fff;
+    border-radius:20px;
+    text-decoration:none;
+    transition:.3s;
+}
 
-.category-section h2{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:0 5%;
-  font-size:22px;
-  font-weight:900;
-  color:#fff;
+.buy-now-btn i{
+    font-style:normal;
+    margin-left:6px;
+}
+
+.buy-now-btn:hover{
+    background:#222;
+    transform:scale(1.05);
+}
+.social-icons a{
+    background:#fff;
+    width:40px;
+    height:40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    transition:.3s;
+    text-decoration:none;
 
 }
 
-.category-section h2 a{
-  font-size:13px;
-  text-decoration:none;
-  color:#000;
+
+/* WHATSAPP */
+.whatsapp-btn{
+  position:fixed;bottom:30px;right:30px;
+  background:#25D366;color:#fff;
+  width:60px;height:60px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:30px
 }
 
-.category-row{
-  display:flex;
-  gap:20px;
-  overflow-x:auto;
-  padding:20px 5%;
-  scroll-snap-type:x mandatory;
-}
-
-.category-row img{
-  width:180px;
-  height:240px;
-  object-fit:cover;
-  border-radius:16px;
-  scroll-snap-align:start;
-  flex-shrink:0;
-  background:#f2f2f2;
-}
-
-.category-row::-webkit-scrollbar{
-  display:none;
-}
-
-    </style>
-</head>
-<body>
-
-    <header>
-<a href="index.html" class="logo"><b>STUBBORN THREAD</b></a>
-    <div class="menu-icon" onclick="toggleMenu()">☰</div>
-
-    <nav id="navMenu">
-        
-        <a href="products.html">Boy</a>
-        <a href="products.html">Girl</a>
-        <a href="products.html">New Arrivals</a>
-        <a href="about.html">About</a>
-
-    </nav>
-</header>
-    <div class="sale-strip">
-  <div class="sale-text">
-    🔥 50% OFF LIVE SALE! 🔥 50% OFF LIVE SALE! 🔥 50% OFF LIVE SALE! 🔥 50% OFF LIVE SALE! 🔥 50% OFF LIVE SALE! 🔥 50% OFF LIVE SALE! 🔥 50% OFF LIVE SALE! 🔥 50% OFF LIVE SALE!     🔥 50% OFF LIVE SALE! 🔥 50% OFF LIVE SALE! 🔥 50% OFF LIVE SALE! 🔥 50% OFF LIVE SALE! 🔥 50% OFF LIVE SALE! 🔥 50% OFF LIVE SALE! 🔥 50% OFF LIVE SALE! 🔥 50% OFF LIVE SALE! 
-
-
-  </div>
-</div>
-
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Stubborn Thread | Official Store</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif}
-body{background:#fff;color:#000}
-
-/* HEADER */
-header{
-  background:#000;
-  color:#fff;
-  padding:16px 5%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  position:sticky;
-  top:0;
-  z-index:1000;
-}
-header a{color:#fff;text-decoration:none;font-weight:900}
-nav a{margin-left:20px;font-size:14px}
-
-/* HERO */
-.hero-slider{
-  position:relative;
-  height:70vh;
-  background:#f6efe4;
-  overflow:hidden;
-}
-.slide{
-  position:absolute;
-  inset:0;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:0 7%;
-  opacity:0;
-  transition:.6s;
-}
-.slide.active{opacity:1}
-.hero-text h1{font-size:52px;line-height:1.1}
-.hero-btn{
-  display:inline-block;
-  margin-top:20px;
-  padding:14px 36px;
-  background:#000;
-  color:#fff;
-  text-decoration:none;
-}
-.hero-img{max-width:45%;height:90%;object-fit:contain}
-
-/* arrows */
-.nav{
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  width:44px;height:44px;
-  border:none;
-  border-radius:50%;
-  background:#fff;
-  font-size:22px;
-  cursor:pointer;
-}
-.prev{left:20px}
-.next{right:20px}
-
-/* CATEGORY CIRCLE */
-.category-circle{
-  text-align:center;
-  padding:80px 5%;
-}
-.circle-row{
-  display:flex;
-  justify-content:center;
-  gap:40px;
-  flex-wrap:wrap;
-}
-.circle-card img{
-  width:160px;
-  height:160px;
-  border-radius:50%;
-  object-fit:cover;
-}
-.circle-card p{margin-top:12px;font-weight:600}
-
-/* COLLECTION */
-.collection{
-  padding:40px 5%;
-}
-.collection h2{
-  display:flex;
-  justify-content:space-between;
-  font-size:22px;
-}
-.row{
-  display:flex;
-  gap:20px;
-  overflow-x:auto;
-  margin-top:20px;
-}
-.row img{
-  width:180px;
-  height:240px;
-  border-radius:16px;
-  object-fit:cover;
-}
-
-/* FOOTER */
-footer{
-  background:#000;
-  color:#fff;
-  padding:40px 5%;
-  margin-top:60px;
-  text-align:center;
+/* MOBILE */
+@media(max-width:768px){
+  .slide{flex-direction:column;text-align:center;padding:40px 6%}
+  .hero-img{max-width:80%;height:auto;margin-top:20px}
+  .hero-text h1{font-size:34px}
 }
 </style>
 </head>
 
-    /* ===== SHOP BY CATEGORY FINAL FIX ===== */
-
-.category-circle-section{
-  padding:80px 5% 60px;
-  text-align:center;
-  background:#fff; /* hero se alag clean look */
-}
-
-.category-top{
-  font-size:13px;
-  letter-spacing:2px;
-  color:#888;
-  margin-bottom:8px;
-}
-
-.category-title{
-  font-size:36px;
-  font-weight:900;
-  margin-bottom:40px;
-}
-
-.circle-row{
-  display:flex;
-  justify-content:center;
-  gap:40px;
-  flex-wrap:wrap;
-}
-
-.circle-card{
-  text-decoration:none;
-  color:#000;
-}
-
-.circle-card img{
-  width:180px;
-  height:180px;
-  border-radius:50%;
-  object-fit:cover;
-  background:#f2f2f2;
-}
-
-.circle-card p{
-  margin-top:14px;
-  font-weight:600;
-}
 <body>
 
 <header>
-  <a href="#">STUBBORN THREAD</a>
+  <a href="index.html">STUBBORN THREAD</a>
   <nav>
-    <a href="#">Boy</a>
-    <a href="#">Girl</a>
-    <a href="#">New Arrivals</a>
+    <a href="products.html">Boy</a>
+    <a href="products.html">Girl</a>
+    <a href="products.html">New Arrivals</a>
+    <a href="about.html">About</a>
   </nav>
 </header>
 
+<div class="sale-strip">
+  <div class="sale-text">
+    🔥 50% OFF LIVE SALE 🔥 50% OFF LIVE SALE 🔥 50% OFF LIVE SALE 🔥
+  </div>
+</div>
+
 <!-- HERO -->
 <section class="hero-slider">
-
-<button class="nav prev" onclick="prevSlide()">‹</button>
-
-<div class="slide active">
-  <div class="hero-text">
-    <h1>Street Soul<br>Premium Feel</h1>
-    <a href="#" class="hero-btn">Shop Now</a>
-  </div>
-  <img src="images/hero1.png" class="hero-img">
-</div>
-
-<div class="slide">
-  <div class="hero-text">
-    <h1>Bold Looks<br>Everyday</h1>
-    <a href="#" class="hero-btn">Shop Now</a>
-  </div>
-  <img src="images/hero2.png" class="hero-img">
-</div>
-
-<button class="nav next" onclick="nextSlide()">›</button>
-</section>
-
-<!-- CATEGORY -->
-<section class="category-circle">
-  <h2>Shop By Category</h2>
-  <div class="circle-row">
-    <div class="circle-card"><img src="images/category1.jpg"><p>T-Shirts</p></div>
-    <div class="circle-card"><img src="images/category2.jpg"><p>Kids</p></div>
-    <div class="circle-card"><img src="images/category3.jpg"><p>New</p></div>
-  </div>
-</section>
-
-<!-- BOYS -->
-<section class="collection">
-  <h2>Boys Collection <a href="#">View All</a></h2>
-  <div class="row" id="boysRow"></div>
-</section>
-
-<!-- GIRLS -->
-<section class="collection">
-  <h2>Girls Collection <a href="#">View All</a></h2>
-  <div class="row">
-    <img src="images/1aa.jpg">
-    <img src="images/2aa.jpg">
-    <img src="images/3aa.jpg">
-    <img src="images/4aa.jpg">
-  </div>
-</section>
-
-<!-- NEW -->
-<section class="collection">
-  <h2>New Arrivals <a href="#">View All</a></h2>
-  <div class="row" id="newRow"></div>
-</section>
-
-<footer>
-  © 2026 Stubborn Thread
-</footer>
-
-<script>
-/* HERO SLIDER */
-let slides=document.querySelectorAll('.slide');
-let index=0;
-function show(i){
-  slides.forEach((s,n)=>s.classList.toggle('active',n===i));
-}
-function nextSlide(){index=(index+1)%slides.length;show(index)}
-function prevSlide(){index=(index-1+slides.length)%slides.length;show(index)}
-setInterval(nextSlide,4000);
-
-/* BOYS */
-const boys=[
-"1.jpeg","2.jpeg","3.jpeg","4.jpeg"
-];
-const boysRow=document.getElementById("boysRow");
-boys.forEach(i=>{
-  let img=document.createElement("img");
-  img.src="images/"+i;
-  boysRow.appendChild(img);
-});
-
-/* NEW */
-const news=["1l (Medium).png","1q (Medium).png","1qq (Medium).png"];
-const newRow=document.getElementById("newRow");
-news.forEach(i=>{
-  let img=document.createElement("img");
-  img.src="images/"+i;
-  newRow.appendChild(img);
-});
-</script>
-
-</body>
-</html>
-
-
-<section class="category-circle-section">
-  ...
-</section>
-
-  <p class="category-top">TOP CATEGORIES</p>
-  <h2 class="category-title">Shop By Category</h2>
-
-  <div class="circle-row">
-
-    <a href="products.html" class="circle-card">
-      <img src="images/category-diary.png">
-      <p>Diary</p>
-    </a>
-
-    <a href="products.html" class="circle-card">
-      <img src="images/category-tshirt.png">
-      <p>T-shirts</p>
-    </a>
-
-    <a href="products.html" class="circle-card">
-      <img src="images/category-tops.png">
-      <p>Tops</p>
-    </a>
-
-    <a href="products.html" class="circle-card">
-      <img src="images/category-mugs.png">
-      <p>Mugs</p>
-    </a>
-
-  </div>
-</section>
-
-
   <button class="nav prev" onclick="prevSlide()">‹</button>
 
   <div class="slide active">
     <div class="hero-text">
-      <small>STUBBORN STYLE</small>
-      <h1>Street Soul<br>Premium Feel<br>T-shirts</h1>
+      <h1>Street Soul<br>Premium Feel</h1>
       <a href="products.html" class="hero-btn">Shop Now</a>
     </div>
     <img src="images/hero1.png" class="hero-img">
@@ -769,82 +315,45 @@ news.forEach(i=>{
 
   <div class="slide">
     <div class="hero-text">
-      <small>NEW COLLECTION</small>
-      <h1>Bold Looks<br>For Everyday</h1>
+      <h1>Bold Looks<br>Everyday</h1>
       <a href="products.html" class="hero-btn">Shop Now</a>
     </div>
     <img src="images/hero2.png" class="hero-img">
   </div>
 
   <button class="nav next" onclick="nextSlide()">›</button>
-
 </section>
 
-
-   <div class="container" id="shop">
-    <div class="section-header">
-        <h2>The Essentials</h2>
-    </div>
-<!-- BOYS -->
-  <section class="category-section collection-slide active">
-    <h2> Boys Collection <a href="products.html">View All</a></h2>
-    <div class="category-row" id="boysRow"></div>
-  </section>
-
-  <!-- GIRLS -->
-  <section class="category-section collection-slide">
-    <h2> Girls Collection <a href="products.html">View All</a></h2>
-    <div class="category-row">
-
-  <a href="buy.html?name=Girls%20Tshirt&price=399&img=images/1aa.jpg">
-    <img src="images/1aa.jpg" loading="lazy">
-  </a>
-
-  <a href="buy.html?name=Girls%20Tshirt&price=399&img=images/2aa.jpg">
-    <img src="images/2aa.jpg" loading="lazy">
-  </a>
-
-  <a href="buy.html?name=Girls%20Tshirt&price=399&img=images/3aa.jpg">
-    <img src="images/3aa.jpg" loading="lazy">
-  </a>
-
-  <a href="buy.html?name=Girls%20Tshirt&price=399&img=images/4aa.jpg">
-    <img src="images/4aa.jpg" loading="lazy">
-  </a>
-
-  <a href="buy.html?name=Girls%20Tshirt&price=399&img=images/5aa.jpg">
-    <img src="images/5aa.jpg" loading="lazy">
-  </a>
-
-  <a href="buy.html?name=Girls%20Tshirt&price=399&img=images/6aa.jpg">
-    <img src="images/6aa.jpg" loading="lazy">
-  </a>
-
-  <a href="buy.html?name=Girls%20Tshirt&price=399&img=images/7aa.jpg">
-    <img src="images/7aa.jpg" loading="lazy">
-  </a>
-
-</div>
-
+<!-- CATEGORY -->
+<section class="category-circle">
+  <h2>Shop By Category</h2>
+  <div class="circle-row">
+    <a href="products.html" class="circle-card">
+      <img src="images/category1.jpg"><p>Boys</p>
+    </a>
+    <a href="products.html" class="circle-card">
+      <img src="images/category2.jpg"><p>Girls</p>
+    </a>
+    <a href="products.html" class="circle-card">
+      <img src="images/mugs.png"><p>Mugs</p>
+    </a>
+  </div>
 </section>
+
 
 <!-- NEW ARRIVALS -->
-  <section class="category-section collection-slide">
-    <h2> New Arrivals <a href="products.html">View All</a></h2>
-    <div class="category-row" id="newArrivalsRow"></div>
-  </section>
+<section class="collection">
+  <h2>New Arrivals <a href="products.html">View All</a></h2>
+  <div class="category-row" id="newArrivalsRow"></div>
+</section>
+
+<a href="https://wa.me/919602838028" class="whatsapp-btn" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
 
 
-</div>
-
-    </div>
-</div>
-
-    <a href="https://wa.me/919602838028" class="whatsapp-btn" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <footer class="footer-section">
+    <footer 
+  class="footer-section">
 
         <div class="footer-container">
             <div class="footer-brand">
@@ -900,20 +409,39 @@ news.forEach(i=>{
         <div class="footer-bottom">
             <p>&copy; 2026 Stubborn Thread. All Rights Reserved.</p>
         </div>
-    </footer>
-    <script>
-function openCustom(){
-  document.getElementById("customPopup").style.display="flex";
+   
+   
+      </footer>
+
+<script>
+/* HERO SLIDER */
+let slides=document.querySelectorAll(".slide");
+let index=0;
+function show(i){
+  slides.forEach((s,n)=>s.classList.toggle("active",n===i));
 }
-function closeCustom(){
-  document.getElementById("customPopup").style.display="none";
-}
-document.getElementById("imgInput").addEventListener("change", function(e){
-  const file = e.target.files[0];
-  const img = document.getElementById("preview");
-  img.src = URL.createObjectURL(file);
-  img.style.display = "block";
+function nextSlide(){index=(index+1)%slides.length;show(index)}
+function prevSlide(){index=(index-1+slides.length)%slides.length;show(index)}
+setInterval(nextSlide,4000);
+
+/* BOYS */
+const boysImages=["1.jpeg","2.jpeg","3.jpeg","4.jpeg"];
+const boysRow=document.getElementById("boysRow");
+boysImages.forEach(img=>{
+  let i=document.createElement("img");
+  i.src="images/"+img;
+  boysRow.appendChild(i);
 });
+
+/* NEW ARRIVALS */
+const newImages=["1l (Medium).png","1q (Medium).png","1qq (Medium).png"];
+const newRow=document.getElementById("newArrivalsRow");
+newImages.forEach(img=>{
+  let i=document.createElement("img");
+  i.src="images/"+img;
+  newRow.appendChild(i);
+});
+</script>
 </script>
     <script>
 function toggleMenu(){
@@ -1246,45 +774,6 @@ newArrivalsImages.forEach(img => {
 
   a.appendChild(image);
   newArrivalsRow.appendChild(a);
-});
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-
-  const slides = document.querySelectorAll(".slide");
-  let index = 0;
-  let timer;
-
-  function showSlide(i){
-    slides.forEach((s,n)=>s.classList.toggle("active", n===i));
-  }
-
-  function nextSlide(){
-    index = (index + 1) % slides.length;
-    showSlide(index);
-    reset();
-  }
-
-  function prevSlide(){
-    index = (index - 1 + slides.length) % slides.length;
-    showSlide(index);
-    reset();
-  }
-
-  function start(){
-    timer = setInterval(nextSlide, 4000);
-  }
-
-  function reset(){
-    clearInterval(timer);
-    start();
-  }
-
-  window.nextSlide = nextSlide;
-  window.prevSlide = prevSlide;
-
-  showSlide(index);
-  start();
 });
 </script>
 
