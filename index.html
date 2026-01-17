@@ -58,25 +58,40 @@ nav a{margin-left:20px;font-size:14px}
 /* HERO SLIDER */
 .hero-slider{
   position:relative;
-  height:70vh;
+  min-height:100vh;   /* FULL SCREEN HEIGHT */
   background:#f6efe4;
   overflow:hidden;
   margin:0;
   padding:0;
 }
-
+/* 👇 YE LINE YAHAN ADD KARO */
+.hero-slider,
 .slide{
-  position:absolute;inset:0;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 7%;opacity:0;transition:.6s
+  box-sizing:border-box;
 }
+.slide{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:stretch;   /* 🔥 CENTER → STRETCH */
+  justify-content:space-between;
+  padding:0 7%;
+  opacity:0;
+  transition:.6s;
+}
+
 .slide.active{opacity:1;z-index:2}
 .hero-text h1{font-size:52px;line-height:1.1}
 .hero-btn{
   display:inline-block;margin-top:20px;
   padding:14px 36px;background:#000;color:#fff;text-decoration:none
 }
-.hero-img{max-width:45%;height:90%;object-fit:contain}
+.hero-img{
+  max-width:45%;
+  height:100%;          /* FULL HEIGHT */
+  object-fit:contain;
+  align-self:flex-end;  /* BOTTOM TOUCH */
+}
 
 /* ARROWS */
 .nav{
