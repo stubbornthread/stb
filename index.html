@@ -782,45 +782,49 @@ function rand(min,max){
   return Math.floor(Math.random()*(max-min+1))+min;
 }
 
-newArrivalsImages.forEach(img=>{
+/* ========== NEW ARRIVALS CARDS ========== */
+
+newArrivalsImages.forEach(img => {
   const mrp = rand(899,1799);
-  const price = rand(349,mrp-200);
-  const rating = (Math.random()*(4.8-4.1)+4.1).toFixed(1);
-  const title = trendingTitles[rand(0,trendingTitles.length-1)];
-  const off = Math.round(((mrp-price)/mrp)*100);
+  const price = rand(349, mrp - 200);
+  const rating = (Math.random() * (4.8 - 4.1) + 4.1).toFixed(1);
+  const title = trendingTitles[rand(0, trendingTitles.length - 1)];
+  const off = Math.round(((mrp - price) / mrp) * 100);
 
   row.innerHTML += `
-  <a class="product-card"
-     href="buy.html?name=${encodeURIComponent(title)}&price=${price}&img=images/${encodeURIComponent(img)}">
+    <a class="product-card"
+       href="buy.html?name=${encodeURIComponent(title)}&price=${price}&img=images/${encodeURIComponent(img)}">
 
-    <div class="img-wrap">
-      <img src="images/${img}" loading="lazy">
-      <div class="rating-overlay">
-        <span class="star">⭐</span> ${rating}
+      <div class="img-wrap">
+        <img src="images/${img}" loading="lazy">
+        <div class="rating-overlay">
+          <span class="star">⭐</span> ${rating}
+        </div>
       </div>
-    </div>
 
-    <div class="brand">Stubborn Thread®</div>
+      <div class="brand">Stubborn Thread®</div>
+      <div class="product-name">${title}</div>
 
-    <div class="product-name">${title}</div>
+      <div class="price-box">
+        <span class="price">₹${price}</span>
+        <span class="mrp">₹${mrp}</span>
+        <span class="off">${off}% OFF</span>
+      </div>
+    </a>
+  `;
+});
 
-    <div class="price-box">
-      <span class="price">₹${price}</span>
-      <span class="mrp">₹${mrp}</span>
-      <span class="off">${off}% OFF</span>
-    </div>
-  </a>
-`;
+/* ========== AUTO SLIDER (OUTSIDE LOOP) ========== */
 
-/* AUTO SLIDE */
 let scrollX = 0;
-setInterval(()=>{
+setInterval(() => {
   scrollX += 240;
-  if(scrollX >= row.scrollWidth - row.clientWidth){
+  if (scrollX >= row.scrollWidth - row.clientWidth) {
     scrollX = 0;
   }
   row.scrollTo({ left: scrollX, behavior: "smooth" });
 }, 3000);
+
 </script>
 
 </body>
