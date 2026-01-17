@@ -166,6 +166,71 @@ header a.logo{
     color:#fff;
     text-decoration:none;
 }
+  /* ===== PRODUCT CARD (HOME PAGE STYLE) ===== */
+
+.product-card{
+  background:#fff;
+  border-radius:16px;
+  padding:12px;
+  position:relative;
+  text-align:left;
+}
+
+/* image wrapper */
+.img-wrap{
+  position:relative;
+}
+
+.product-card img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+/* rating bottom-left */
+.rating-overlay{
+  position:absolute;
+  bottom:10px;
+  left:10px;
+  background:#fff;
+  padding:4px 8px;
+  border-radius:14px;
+  font-size:13px;
+  font-weight:700;
+  display:flex;
+  align-items:center;
+  gap:4px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.2);
+}
+
+.rating-overlay .star{
+  color:#f5b301;
+}
+
+/* brand + text */
+.brand{
+  margin-top:10px;
+  font-size:14px;
+  font-weight:900;
+}
+
+.product-name{
+  font-size:13px;
+  color:#555;
+  margin:4px 0;
+}
+
+.price-box{
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+
+.price{font-weight:900}
+.mrp{text-decoration:line-through;color:#888;font-size:13px}
+.off{color:#1a9b3b;font-weight:900;font-size:13px}
+
 </style>
 </head>
 
@@ -383,18 +448,36 @@ images.forEach(img=>{
   const price = Math.floor(Math.random() * 300) + 299;
   const title = titles[Math.floor(Math.random() * titles.length)] + " – Stubborn Thread";
 
+  images.forEach(img=>{
+  const mrp = Math.floor(Math.random() * 900) + 999;
+  const price = Math.floor(Math.random() * 400) + 399;
+  const rating = (Math.random() * (4.8 - 4.1) + 4.1).toFixed(1);
+  const title = titles[Math.floor(Math.random() * titles.length)];
+  const off = Math.round(((mrp - price) / mrp) * 100);
+
   grid.innerHTML += `
-    <div class="product-card">
-      <img src="images/${img}" loading="lazy">
-      <h3>${title}</h3>
-      <p>₹${price}</p>
-      <a class="buy-btn" href="buy.html?name=${encodeURIComponent(title)}&price=${price}&img=images/${img}">
-        Buy Now
-      </a>
-    </div>
+    <a class="product-card"
+       href="buy.html?name=${encodeURIComponent(title)}&price=${price}&img=images/${encodeURIComponent(img)}">
+
+      <div class="img-wrap">
+        <img src="images/${img}" loading="lazy">
+        <div class="rating-overlay">
+          <span class="star">⭐</span> ${rating}
+        </div>
+      </div>
+
+      <div class="brand">Stubborn Thread®</div>
+      <div class="product-name">${title}</div>
+
+      <div class="price-box">
+        <span class="price">₹${price}</span>
+        <span class="mrp">₹${mrp}</span>
+        <span class="off">${off}% OFF</span>
+      </div>
+    </a>
   `;
 });
-;
+
 </script>
 
 </body>
