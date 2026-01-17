@@ -73,11 +73,12 @@ nav a{margin-left:20px;font-size:14px}
   position:absolute;
   inset:0;
   display:flex;
-  align-items:stretch;   /* 🔥 CENTER → STRETCH */
+  align-items:center;
   justify-content:space-between;
   padding:0 7%;
   opacity:0;
   transition:.6s;
+  box-sizing:border-box;
 }
 
 .slide.active{opacity:1;z-index:2}
