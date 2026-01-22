@@ -676,3 +676,23 @@ GLOBAL FOOTER (All Pages)
   text-decoration:none;
 }
 
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #000;
+  color: #fff;
+  padding: 80px;
+  min-height: 90vh;
+}
+
+.hero-media {
+  width: 50%;
+}
+
+.hero-media video {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  display: block;
+}
